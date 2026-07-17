@@ -1,21 +1,33 @@
 window.ICONS = {
   icons: {
-    // Gem Types
-    'ruby': '<path d="M4 8l8-6 8 6-8 12z" fill="#9b2335" stroke="currentColor"/><path d="M4 8h16M12 2v18" stroke="currentColor"/>',
-    'sapphire': '<ellipse cx="12" cy="12" rx="7" ry="9" fill="#1e3a5f" stroke="currentColor"/><path d="M7 9l5 12 5-12M8 15l4-13 4 13" stroke="currentColor"/>',
-    'emerald': '<rect x="6" y="4" width="12" height="16" rx="2" fill="#2d6a4f" stroke="currentColor"/><path d="M6 8h12M6 16h12M9 4v16M15 4v16" stroke="currentColor"/>',
-    'garnet': '<circle cx="12" cy="12" r="8" fill="#8b1a1a" stroke="currentColor"/><path d="M12 4v16M4 12h16M7 7l10 10M17 7L7 17" stroke="currentColor"/>',
-    'aquamarine': '<path d="M12 3s-7 7-7 11a7 7 0 0 0 14 0c0-4-7-11-7-11z" fill="#5fa8d3" stroke="currentColor"/><path d="M12 3v18M7.5 12.5l9 5M16.5 12.5l-9 5" stroke="currentColor"/>',
-    'amethyst': '<path d="M12 2l7 4v8l-7 8-7-8V6z" fill="#7b4f9e" stroke="currentColor"/><path d="M12 2v18M5 10l14-2M5 14l14 2" stroke="currentColor"/>',
-    'quartz': '<path d="M12 2l4 6v14H8V8zM8 12l-4 4v6h4zM16 10l4 4v8h-4z" fill="#5c4033" stroke="currentColor"/>',
-    'smoky quartz': '<path d="M12 2l4 6v14H8V8zM8 12l-4 4v6h4zM16 10l4 4v8h-4z" fill="#5c4033" stroke="currentColor"/>',
-    'citrine': '<path d="M8 4h8l4 4v8l-4 4H8l-4-4V8z" fill="#d4a843" stroke="currentColor"/><path d="M8 4l8 16M16 4L8 20M4 8l16 8M4 16l16-8" stroke="currentColor"/>',
-    'tourmaline': '<path d="M9 3h6l2 3v13l-2 2H9l-2-2V6z" fill="#3a7d44" stroke="currentColor"/><path d="M12 3v18M7 8h10M7 14h10" stroke="currentColor"/>',
-    'agate': '<ellipse cx="12" cy="12" rx="9" ry="6" fill="#6ba3c7" stroke="currentColor"/><path d="M6 10c4-2 8-2 12 0M5 14c4 2 10 2 14 0" stroke="currentColor"/>',
-    'jasper': '<path d="M12 4c4 0 7 2 8 6s-2 10-7 10-9-5-9-9 3-7 8-7z" fill="#c4956a" stroke="currentColor"/><circle cx="9" cy="9" r="1" fill="#c4956a"/><circle cx="15" cy="14" r="1.5" fill="#c4956a"/>',
-    'gem-generic': '<path d="M12 2L4 10l8 12 8-12z" fill="#d4a843" stroke="currentColor"/><path d="M4 10h16M12 2v20" stroke="currentColor"/>',
+    // ── Gem Types (with gradients & facets) ──────────────────
+    'ruby': '<defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e84363"/><stop offset="50%" stop-color="#9b2335"/><stop offset="100%" stop-color="#6b1520"/></linearGradient><radialGradient id="grh" cx="35%" cy="30%"><stop offset="0%" stop-color="rgba(255,255,255,0.5)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M12 2l8 7-8 13-8-13z" fill="url(#gr)" stroke="#e84363" stroke-width="0.5"/><path d="M4 9h16M12 2l-4 7 4 13 4-13z" fill="none" stroke="rgba(255,200,200,0.3)" stroke-width="0.5"/><path d="M8 9l4 13 4-13" fill="rgba(155,35,53,0.6)"/><ellipse cx="9" cy="7" rx="3" ry="2" fill="url(#grh)"/>',
 
-    // Tools & Process
+    'sapphire': '<defs><linearGradient id="gs" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#4d8fcc"/><stop offset="50%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#0f1f35"/></linearGradient><radialGradient id="gsh" cx="40%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.45)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><ellipse cx="12" cy="12" rx="8" ry="10" fill="url(#gs)" stroke="#4d8fcc" stroke-width="0.5"/><path d="M6 8l6-5 6 5M6 8l6 14 6-14" fill="none" stroke="rgba(150,200,255,0.25)" stroke-width="0.5"/><path d="M8 9l4 13 4-13" fill="rgba(30,58,95,0.5)"/><ellipse cx="10" cy="7" rx="3.5" ry="2.5" fill="url(#gsh)"/>',
+
+    'emerald': '<defs><linearGradient id="ge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#52b788"/><stop offset="50%" stop-color="#2d6a4f"/><stop offset="100%" stop-color="#1a3c2e"/></linearGradient><radialGradient id="geh" cx="35%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.4)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M7 4h10l3 3v10l-3 3H7l-3-3V7z" fill="url(#ge)" stroke="#52b788" stroke-width="0.5"/><path d="M7 4l5 8-5 8M17 4l-5 8 5 8M4 7h16M4 17h16" fill="none" stroke="rgba(200,255,200,0.2)" stroke-width="0.5"/><rect x="9" y="8" width="6" height="8" fill="rgba(45,106,79,0.4)" rx="1"/><ellipse cx="9" cy="6" rx="3" ry="2" fill="url(#geh)"/>',
+
+    'garnet': '<defs><radialGradient id="gg" cx="40%" cy="35%"><stop offset="0%" stop-color="#c44040"/><stop offset="60%" stop-color="#8b1a1a"/><stop offset="100%" stop-color="#4a0e0e"/></radialGradient><radialGradient id="ggh" cx="35%" cy="30%"><stop offset="0%" stop-color="rgba(255,255,255,0.45)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="12" cy="12" r="9" fill="url(#gg)" stroke="#c44040" stroke-width="0.5"/><path d="M12 3l3 9-3 9-3-9zM3 12l9-3 9 3-9 3z" fill="none" stroke="rgba(255,150,150,0.2)" stroke-width="0.5"/><path d="M12 3l3 9-3 9-3-9z" fill="rgba(139,26,26,0.4)"/><ellipse cx="10" cy="8" rx="3" ry="2.5" fill="url(#ggh)"/>',
+
+    'aquamarine': '<defs><linearGradient id="ga" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#a8daec"/><stop offset="50%" stop-color="#5fa8d3"/><stop offset="100%" stop-color="#2c7da0"/></linearGradient><radialGradient id="gah" cx="40%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.55)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M12 2c-5 6-7 10-7 13a7 7 0 0 0 14 0c0-3-2-7-7-13z" fill="url(#ga)" stroke="#5fa8d3" stroke-width="0.5"/><path d="M12 2v20M7 13l5 9 5-9" fill="none" stroke="rgba(200,240,255,0.3)" stroke-width="0.5"/><path d="M8 13l4 9 4-9" fill="rgba(95,168,211,0.35)"/><ellipse cx="10" cy="9" rx="3" ry="3" fill="url(#gah)"/>',
+
+    'amethyst': '<defs><linearGradient id="gam" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b47fd4"/><stop offset="50%" stop-color="#7b4f9e"/><stop offset="100%" stop-color="#4a2d6b"/></linearGradient><radialGradient id="gamh" cx="35%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.45)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M12 2l8 5v10l-8 5-8-5V7z" fill="url(#gam)" stroke="#b47fd4" stroke-width="0.5"/><path d="M12 2v20M4 7l8 5 8-5M4 17l8-5 8 5" fill="none" stroke="rgba(220,180,255,0.25)" stroke-width="0.5"/><path d="M12 2l-8 5 8 5 8-5z" fill="rgba(123,79,158,0.35)"/><ellipse cx="9" cy="6" rx="3" ry="2" fill="url(#gamh)"/>',
+
+    'quartz': '<defs><linearGradient id="gq" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#8a6d55"/><stop offset="50%" stop-color="#5c4033"/><stop offset="100%" stop-color="#3a2820"/></linearGradient><radialGradient id="gqh" cx="35%" cy="20%"><stop offset="0%" stop-color="rgba(255,255,255,0.35)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M9 2h6l3 6v12l-1 2H7l-1-2V8z" fill="url(#gq)" stroke="#8a6d55" stroke-width="0.5"/><path d="M9 2l3 6 3-6M8 8h8M12 8v14" fill="none" stroke="rgba(200,180,160,0.25)" stroke-width="0.5"/><path d="M9 2l3 6h6l-3-6z" fill="rgba(92,64,51,0.4)"/><ellipse cx="10" cy="5" rx="2.5" ry="1.5" fill="url(#gqh)"/>',
+
+    'smoky quartz': '<defs><linearGradient id="gsq" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#7a6555"/><stop offset="50%" stop-color="#4a3525"/><stop offset="100%" stop-color="#2a1a10"/></linearGradient><radialGradient id="gsqh" cx="35%" cy="20%"><stop offset="0%" stop-color="rgba(255,255,255,0.3)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M9 2h6l3 6v12l-1 2H7l-1-2V8z" fill="url(#gsq)" stroke="#7a6555" stroke-width="0.5"/><path d="M9 2l3 6 3-6M8 8h8M12 8v14" fill="none" stroke="rgba(180,160,140,0.2)" stroke-width="0.5"/><path d="M9 2l3 6h6l-3-6z" fill="rgba(74,53,37,0.4)"/><ellipse cx="10" cy="5" rx="2.5" ry="1.5" fill="url(#gsqh)"/>',
+
+    'citrine': '<defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0d678"/><stop offset="50%" stop-color="#d4a843"/><stop offset="100%" stop-color="#a07a20"/></linearGradient><radialGradient id="gch" cx="35%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.5)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z" fill="url(#gc)" stroke="#d4a843" stroke-width="0.5"/><path d="M8 3l4 9-4 9M16 3l-4 9 4 9M3 8l9 4 9-4M3 16l9-4 9 4" fill="none" stroke="rgba(255,240,200,0.3)" stroke-width="0.5"/><path d="M12 12l-9-4 5-5h8l5 5z" fill="rgba(212,168,67,0.3)"/><ellipse cx="9" cy="6" rx="3" ry="2" fill="url(#gch)"/>',
+
+    'tourmaline': '<defs><linearGradient id="gt2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6bc47a"/><stop offset="50%" stop-color="#3a7d44"/><stop offset="100%" stop-color="#1e4a28"/></linearGradient><radialGradient id="gth" cx="35%" cy="20%"><stop offset="0%" stop-color="rgba(255,255,255,0.4)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M9 2h6l2 3v14l-2 3H9l-2-3V5z" fill="url(#gt2)" stroke="#6bc47a" stroke-width="0.5"/><path d="M9 2l3 5 3-5M7 5h10M7 19h10M12 7v12" fill="none" stroke="rgba(200,255,200,0.25)" stroke-width="0.5"/><path d="M9 2l3 5h3l2-2V3l-2-1z" fill="rgba(58,125,68,0.35)"/><ellipse cx="10" cy="5" rx="2.5" ry="1.5" fill="url(#gth)"/>',
+
+    'agate': '<defs><radialGradient id="gag" cx="50%" cy="50%"><stop offset="0%" stop-color="#a8d4e6"/><stop offset="40%" stop-color="#6ba3c7"/><stop offset="100%" stop-color="#3a7090"/></radialGradient><radialGradient id="gagh" cx="35%" cy="30%"><stop offset="0%" stop-color="rgba(255,255,255,0.4)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><ellipse cx="12" cy="12" rx="10" ry="7" fill="url(#gag)" stroke="#6ba3c7" stroke-width="0.5"/><ellipse cx="12" cy="12" rx="7" ry="4.5" fill="none" stroke="rgba(200,230,255,0.25)"/><ellipse cx="12" cy="12" rx="4" ry="2.5" fill="none" stroke="rgba(200,230,255,0.2)"/><ellipse cx="10" cy="9" rx="3" ry="1.5" fill="url(#gagh)"/>',
+
+    'jasper': '<defs><radialGradient id="gj" cx="45%" cy="40%"><stop offset="0%" stop-color="#deb887"/><stop offset="50%" stop-color="#c4956a"/><stop offset="100%" stop-color="#8b6940"/></radialGradient><radialGradient id="gjh" cx="35%" cy="30%"><stop offset="0%" stop-color="rgba(255,255,255,0.35)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M12 3c5 0 8 3 9 7s-1 8-4 10-8 1-11-2-4-7-2-11S7 3 12 3z" fill="url(#gj)" stroke="#c4956a" stroke-width="0.5"/><circle cx="9" cy="10" r="1.5" fill="rgba(139,105,64,0.5)"/><circle cx="15" cy="14" r="2" fill="rgba(139,105,64,0.4)"/><circle cx="13" cy="8" r="1" fill="rgba(139,105,64,0.3)"/><ellipse cx="9" cy="6" rx="3" ry="2" fill="url(#gjh)"/>',
+
+    'gem-generic': '<defs><linearGradient id="ggen" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0d678"/><stop offset="50%" stop-color="#d4a843"/><stop offset="100%" stop-color="#a07a20"/></linearGradient><radialGradient id="ggenh" cx="35%" cy="25%"><stop offset="0%" stop-color="rgba(255,255,255,0.5)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><path d="M12 2L4 9l8 13 8-13z" fill="url(#ggen)" stroke="#d4a843" stroke-width="0.5"/><path d="M4 9h16M8 9l4 13 4-13" fill="none" stroke="rgba(255,240,200,0.3)" stroke-width="0.5"/><ellipse cx="9" cy="6" rx="3" ry="2" fill="url(#ggenh)"/>',
+
+    // ── Tools & Process ──────────────────────────────────────
     'saw': '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4l1-1M18 12l1 1M12 20l-1 1M6 12l-1-1M17 7l1-1M17 17l1 1M7 17l-1 1M7 7l-1-1"/>',
     'loupe': '<path d="M3 21l6-6"/><circle cx="13" cy="11" r="6"/><path d="M17.5 15.5l1.5-1.5"/>',
     'polish': '<path d="M12 4v4M12 16v4M4 12h4M16 12h4M7 7l2 2M15 15l2 2M7 17l2-2M15 9l2-2"/>',
@@ -62,13 +74,12 @@ window.ICONS = {
   },
 
   getIcon: function(name, size = 24) {
-    if (name === 'smoky quartz') name = 'quartz';
-    const path = this.icons[name];
+    const path = this.icons[name] || this.icons['gem-generic'];
     if (!path) {
-      console.warn(`Icon "${name}" not found.`);
+      console.warn('Icon "' + name + '" not found.');
       return '';
     }
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-${name.replace(/\s+/g, '-')}">${path}</svg>`;
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-' + name.replace(/\s+/g, '-') + '">' + path + '</svg>';
   }
 };
