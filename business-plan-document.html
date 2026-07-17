@@ -1002,25 +1002,65 @@ tr.highlight-row td {
    PRINT STYLES
    ============================================================ */
 @media print {
-  html { font-size: 10pt; }
+  @page {
+    size: letter;
+    margin: 0.75in 0.75in 1in 0.75in;
+  }
+
+  @page :first {
+    margin: 0;
+  }
+
+  html {
+    font-size: 9.5pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 
   body {
-    background: white;
-    color: black;
+    background: white !important;
+    color: #1a1a2e !important;
+    line-height: 1.5;
   }
 
   .page-container {
     max-width: none;
-    box-shadow: none;
+    box-shadow: none !important;
+    margin: 0;
   }
 
+  .page-content {
+    padding: 0;
+  }
+
+  /* Cover page fills first page */
   .cover-page {
     min-height: 0;
     height: 100vh;
     page-break-after: always;
+    margin: 0;
+    padding: 0.75in;
   }
 
-  .page-break-before {
+  .cover-logo {
+    width: 140px;
+  }
+
+  .cover-hero-img {
+    max-width: 420px;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  /* TOC on its own page */
+  .toc-container {
+    page-break-before: always;
+    page-break-after: always;
+  }
+
+  /* Major section page breaks */
+  .page-break-before,
+  .section-break {
     page-break-before: always;
   }
 
@@ -1028,46 +1068,111 @@ tr.highlight-row td {
     page-break-after: always;
   }
 
-  .no-page-break {
-    page-break-inside: avoid;
-  }
-
+  /* Prevent orphaned headings */
   h1, h2, h3, h4 {
     page-break-after: avoid;
-  }
-
-  table, .callout, .diagram-container {
     page-break-inside: avoid;
   }
 
-  @page {
-    size: letter;
-    margin: 1in;
+  /* Keep tables, callouts, diagrams together */
+  table {
+    page-break-inside: avoid;
+    font-size: 0.8rem;
   }
 
+  thead {
+    display: table-header-group;
+  }
+
+  .callout,
+  .diagram-container,
+  .formula-box,
+  .checklist {
+    page-break-inside: avoid;
+  }
+
+  /* Don't break rows across pages */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* Running header */
   .running-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid var(--gold);
+    padding: 0.2rem 0.5in;
+    border-bottom: 1.5px solid #d4a843;
+    background: white;
+    z-index: 100;
+    font-size: 0.7rem;
   }
 
+  .running-header-logo {
+    height: 24px;
+  }
+
+  /* Page footer */
   .page-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 0.3rem 0;
-    border-top: 1px solid var(--border);
+    padding: 0.2rem 0.5in;
+    border-top: 1px solid #d0c8b8;
+    font-size: 0.65rem;
+    text-align: center;
+    color: #6b6b8a;
+    background: white;
   }
 
-  a { color: var(--text-primary); border-bottom: none; }
-  a[href^="http"]::after { content: none; }
+  /* Links: no underlines in print */
+  a {
+    color: #1a1a2e !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
 
+  a[href^="http"]::after {
+    content: none !important;
+  }
+
+  /* Constrain images */
   .section-image {
-    max-height: 200px;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  /* No hover effects in print */
+  tbody tr:hover {
+    background: inherit !important;
+  }
+
+  /* Gold total rows must print */
+  tr.total-row td,
+  tr.total-row th {
+    background: #d4a843 !important;
+    color: #1a1a2e !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Callout backgrounds must print */
+  .callout {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Table header backgrounds must print */
+  thead th {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #1a1a2e !important;
+    color: white !important;
   }
 }
 
