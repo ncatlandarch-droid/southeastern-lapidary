@@ -1004,7 +1004,7 @@ tr.highlight-row td {
 @media print {
   @page {
     size: letter;
-    margin: 0.75in 0.75in 1in 0.75in;
+    margin: 0.6in 0.65in 0.75in 0.65in;
   }
 
   @page :first {
@@ -1012,7 +1012,7 @@ tr.highlight-row td {
   }
 
   html {
-    font-size: 9.5pt;
+    font-size: 9pt;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -1020,7 +1020,7 @@ tr.highlight-row td {
   body {
     background: white !important;
     color: #1a1a2e !important;
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .page-container {
@@ -1029,36 +1029,40 @@ tr.highlight-row td {
     margin: 0;
   }
 
+  /* CRITICAL: Zero out page-content padding so @page margins are the only spacing */
   .page-content {
-    padding: 0;
+    padding: 0.3in 0 !important;
   }
 
-  /* Cover page fills first page */
+  /* Cover page fills first printed page */
   .cover-page {
     min-height: 0;
     height: 100vh;
     page-break-after: always;
     margin: 0;
-    padding: 0.75in;
+    padding: 0.5in;
   }
 
   .cover-logo {
-    width: 140px;
+    width: 130px;
+  }
+
+  .cover-company {
+    font-size: 2rem;
   }
 
   .cover-hero-img {
-    max-width: 420px;
-    max-height: 250px;
+    max-width: 380px;
+    max-height: 220px;
     object-fit: cover;
   }
 
   /* TOC on its own page */
   .toc-container {
-    page-break-before: always;
     page-break-after: always;
   }
 
-  /* Major section page breaks */
+  /* Each section starts on new page */
   .page-break-before,
   .section-break {
     page-break-before: always;
@@ -1074,16 +1078,45 @@ tr.highlight-row td {
     page-break-inside: avoid;
   }
 
-  /* Keep tables, callouts, diagrams together */
+  h1 {
+    font-size: 1.4rem;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  /* Tables: compact for print */
   table {
     page-break-inside: avoid;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    margin: 0.4rem 0 0.8rem 0;
   }
 
   thead {
     display: table-header-group;
   }
 
+  thead th {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #1a1a2e !important;
+    color: white !important;
+  }
+
+  tbody td {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Keep tables, callouts, diagrams together */
   .callout,
   .diagram-container,
   .formula-box,
@@ -1091,43 +1124,34 @@ tr.highlight-row td {
     page-break-inside: avoid;
   }
 
+  .callout {
+    padding: 0.6rem 0.8rem;
+    margin: 0.5rem 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   /* Don't break rows across pages */
   tr {
     page-break-inside: avoid;
   }
 
-  /* Running header */
+  /* Running header — use static, not fixed (fixed causes overlap in PDF) */
   .running-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0.2rem 0.5in;
-    border-bottom: 1.5px solid #d4a843;
-    background: white;
-    z-index: 100;
-    font-size: 0.7rem;
+    display: none;
   }
 
-  .running-header-logo {
-    height: 24px;
-  }
-
-  /* Page footer */
+  /* Page footer — hide in print (use @page margin instead) */
   .page-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.2rem 0.5in;
-    border-top: 1px solid #d0c8b8;
-    font-size: 0.65rem;
-    text-align: center;
-    color: #6b6b8a;
-    background: white;
+    display: none;
   }
 
-  /* Links: no underlines in print */
+  /* Print instruction banner — hide */
+  .print-banner {
+    display: none !important;
+  }
+
+  /* Links: clean for print */
   a {
     color: #1a1a2e !important;
     text-decoration: none !important;
@@ -1140,7 +1164,7 @@ tr.highlight-row td {
 
   /* Constrain images */
   .section-image {
-    max-height: 180px;
+    max-height: 160px;
     object-fit: cover;
   }
 
@@ -1161,18 +1185,20 @@ tr.highlight-row td {
     -webkit-print-color-adjust: exact !important;
   }
 
-  /* Callout backgrounds must print */
-  .callout {
+  /* Zebra stripe backgrounds print */
+  tbody tr:nth-child(even) {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  /* Table header backgrounds must print */
-  thead th {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background: #1a1a2e !important;
-    color: white !important;
+  /* Diagrams compact */
+  .diagram-container {
+    margin: 0.5rem 0;
+  }
+
+  /* Section images */
+  .section-image-container {
+    margin: 0.5rem 0;
   }
 }
 
@@ -1192,6 +1218,10 @@ tr.highlight-row td {
 <!-- ============================================================
      COVER PAGE
      ============================================================ -->
+<div class="print-banner">
+  <strong>To save as PDF:</strong> Press Ctrl+P &rarr; check "Background graphics" &rarr; set Margins to "None" &rarr; Save as PDF
+</div>
+
 <div class="cover-page">
   <img src="assets/images/sla-logo.png" alt="SLA Logo" class="cover-logo">
   <div class="cover-company">Southeastern Lapidary Associates</div>
