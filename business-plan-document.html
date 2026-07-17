@@ -1,2778 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Southeastern Lapidary Associates — Comprehensive Business Plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   SLA BUSINESS PLAN — DESIGN TOKENS
-   ============================================================ */
-:root {
-  --charcoal: #1a1a2e;
-  --charcoal-light: #2a2a42;
-  --gold: #d4a843;
-  --gold-light: #e8c97a;
-  --gold-dim: rgba(212,168,67,0.12);
-  --ruby: #9b2335;
-  --ruby-light: #c43a50;
-  --emerald: #2d6a4f;
-  --emerald-light: #40916c;
-  --sapphire: #1e3a5f;
-  --sapphire-light: #2c5282;
-  --cream: #f5f0e8;
-  --cream-dark: #e8e0d0;
-  --white: #ffffff;
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a4a6a;
-  --text-muted: #6b6b8a;
-  --border: #d0c8b8;
-  --border-light: #e8e0d0;
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --page-max: 8.5in;
-}
-
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  font-size: 11pt;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  background: var(--cream);
-  line-height: 1.65;
-  font-weight: 400;
-}
-
-/* ============================================================
-   PAGE CONTAINER
-   ============================================================ */
-.page-container {
-  max-width: var(--page-max);
-  margin: 0 auto;
-  background: var(--white);
-}
-
-.page-content {
-  padding: 0.75in 1in;
-}
-
-/* ============================================================
-   COVER PAGE
-   ============================================================ */
-.cover-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(160deg, var(--charcoal) 0%, var(--sapphire) 45%, var(--charcoal-light) 100%);
-  color: var(--white);
-  text-align: center;
-  padding: 1in;
-  position: relative;
-  overflow: hidden;
-}
-
-.cover-page::before {
-  content: '';
-  position: absolute;
-  top: -40%;
-  right: -30%;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,168,67,0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cover-page::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -20%;
-  width: 60%;
-  height: 60%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(155,35,53,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cover-logo {
-  width: 180px;
-  height: auto;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cover-divider {
-  width: 80px;
-  height: 3px;
-  background: var(--gold);
-  margin: 1.5rem auto;
-  border: none;
-  position: relative;
-  z-index: 1;
-}
-
-.cover-company {
-  font-family: var(--font-heading);
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cover-tagline {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cover-subtitle {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cover-detail {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.7);
-  position: relative;
-  z-index: 1;
-}
-
-.cover-detail strong {
-  color: rgba(255,255,255,0.9);
-}
-
-.cover-hero-img {
-  width: 100%;
-  max-width: 540px;
-  margin-top: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  position: relative;
-  z-index: 1;
-}
-
-.cover-footer {
-  position: absolute;
-  bottom: 0.75in;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
-  z-index: 1;
-}
-
-/* ============================================================
-   RUNNING HEADER
-   ============================================================ */
-.running-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1in;
-  border-bottom: 2px solid var(--gold);
-  background: var(--white);
-}
-
-.running-header-logo {
-  height: 32px;
-  width: auto;
-}
-
-.running-header-text {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* ============================================================
-   TYPOGRAPHY
-   ============================================================ */
-h1 {
-  font-family: var(--font-heading);
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin: 2.5rem 0 1rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--gold);
-  page-break-after: avoid;
-}
-
-h1 .section-num {
-  display: inline-block;
-  background: var(--charcoal);
-  color: var(--gold);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
-}
-
-h2 {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--sapphire);
-  margin: 1.8rem 0 0.7rem 0;
-  page-break-after: avoid;
-}
-
-h3 {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--charcoal);
-  margin: 1.4rem 0 0.5rem 0;
-  page-break-after: avoid;
-}
-
-h4 {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--emerald);
-  margin: 1.2rem 0 0.4rem 0;
-}
-
-p {
-  margin: 0.6rem 0;
-}
-
-strong { font-weight: 600; }
-
-a {
-  color: var(--sapphire);
-  text-decoration: none;
-  border-bottom: 1px solid var(--gold-dim);
-}
-
-a:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
-
-ul, ol {
-  margin: 0.5rem 0 0.5rem 1.5rem;
-}
-
-li {
-  margin: 0.3rem 0;
-}
-
-blockquote {
-  border-left: 4px solid var(--gold);
-  padding: 0.6rem 1rem;
-  margin: 0.8rem 0;
-  background: var(--gold-dim);
-  border-radius: 0 6px 6px 0;
-  font-style: normal;
-}
-
-blockquote p {
-  margin: 0.3rem 0;
-}
-
-code {
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.9em;
-  background: var(--cream);
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
-  color: var(--ruby);
-}
-
-pre {
-  background: var(--charcoal);
-  color: #e2e8f0;
-  padding: 1rem 1.2rem;
-  border-radius: 6px;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  overflow-x: auto;
-  margin: 0.8rem 0;
-}
-
-pre code {
-  background: none;
-  color: inherit;
-  padding: 0;
-}
-
-/* ============================================================
-   TABLE OF CONTENTS
-   ============================================================ */
-.toc {
-  padding: 1.5rem 0;
-}
-
-.toc-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 3px solid var(--gold);
-}
-
-.toc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  columns: 1;
-}
-
-.toc-list li {
-  margin: 0;
-  padding: 0;
-}
-
-.toc-list a {
-  display: flex;
-  align-items: baseline;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-light);
-  text-decoration: none;
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-
-.toc-list a:hover {
-  color: var(--gold);
-}
-
-.toc-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: var(--charcoal);
-  color: var(--gold);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.8rem;
-  border-radius: 4px;
-  margin-right: 0.75rem;
-  flex-shrink: 0;
-}
-
-.toc-text {
-  flex: 1;
-}
-
-.toc-dots {
-  flex: 1;
-  border-bottom: 1px dotted var(--border);
-  margin: 0 0.5rem;
-  min-width: 2rem;
-}
-
-/* ============================================================
-   TABLES
-   ============================================================ */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.8rem 0 1.2rem 0;
-  font-size: 0.88rem;
-  page-break-inside: avoid;
-}
-
-thead th {
-  background: var(--charcoal);
-  color: var(--white);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.6rem 0.75rem;
-  text-align: left;
-  border: 1px solid var(--charcoal);
-}
-
-tbody td {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-light);
-  vertical-align: top;
-}
-
-tbody tr:nth-child(even) {
-  background: var(--cream);
-}
-
-tbody tr:nth-child(odd) {
-  background: var(--white);
-}
-
-tbody tr:hover {
-  background: var(--gold-dim);
-}
-
-/* Gold accent total rows */
-tr.total-row td,
-tr.total-row th {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-  color: var(--charcoal);
-  font-weight: 700;
-  font-family: var(--font-heading);
-  border-color: var(--gold);
-}
-
-/* Highlight rows */
-tr.highlight-row td {
-  background: rgba(212,168,67,0.15);
-  font-weight: 600;
-}
-
-/* ============================================================
-   CALLOUT BOXES
-   ============================================================ */
-.callout {
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  position: relative;
-  page-break-inside: avoid;
-}
-
-.callout-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-
-.callout-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-.callout-header {
-  display: flex;
-  align-items: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5rem;
-}
-
-.callout-body {
-  font-size: 0.92rem;
-}
-
-.callout-body p { margin: 0.3rem 0; }
-.callout-body ul { margin: 0.3rem 0 0.3rem 1.2rem; }
-.callout-body li { margin: 0.2rem 0; }
-
-/* NOTE */
-.callout-note {
-  background: rgba(30,58,95,0.06);
-  border-left: 4px solid var(--sapphire);
-}
-.callout-note .callout-icon { background: var(--sapphire); }
-.callout-note .callout-icon svg { fill: var(--white); }
-.callout-note .callout-header { color: var(--sapphire); }
-
-/* TIP */
-.callout-tip {
-  background: rgba(45,106,79,0.06);
-  border-left: 4px solid var(--emerald);
-}
-.callout-tip .callout-icon { background: var(--emerald); }
-.callout-tip .callout-icon svg { fill: var(--white); }
-.callout-tip .callout-header { color: var(--emerald); }
-
-/* IMPORTANT */
-.callout-important {
-  background: rgba(212,168,67,0.08);
-  border-left: 4px solid var(--gold);
-}
-.callout-important .callout-icon { background: var(--gold); }
-.callout-important .callout-icon svg { fill: var(--charcoal); }
-.callout-important .callout-header { color: #b8922e; }
-
-/* WARNING */
-.callout-warning {
-  background: rgba(155,35,53,0.06);
-  border-left: 4px solid var(--ruby);
-}
-.callout-warning .callout-icon { background: var(--ruby); }
-.callout-warning .callout-icon svg { fill: var(--white); }
-.callout-warning .callout-header { color: var(--ruby); }
-
-/* CAUTION */
-.callout-caution {
-  background: rgba(155,35,53,0.08);
-  border-left: 4px solid var(--ruby);
-  border: 2px solid var(--ruby);
-  border-left-width: 4px;
-}
-.callout-caution .callout-icon { background: var(--ruby); }
-.callout-caution .callout-icon svg { fill: var(--white); }
-.callout-caution .callout-header { color: var(--ruby); }
-
-/* ============================================================
-   CSS DIAGRAMS (REPLACING MERMAID)
-   ============================================================ */
-.diagram-container {
-  margin: 1.2rem 0;
-  page-break-inside: avoid;
-}
-
-.diagram-title {
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
-  text-align: center;
-}
-
-/* Tree diagram */
-.tree-diagram {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.tree-root {
-  background: var(--charcoal);
-  color: var(--gold);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.tree-branches {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-}
-
-.tree-branches::before {
-  content: '';
-  position: absolute;
-  top: -0.6rem;
-  left: 50%;
-  width: 1px;
-  height: 0.6rem;
-  background: var(--border);
-}
-
-.tree-branch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.tree-node {
-  background: var(--sapphire);
-  color: var(--white);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 0.78rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.tree-leaf {
-  background: var(--cream);
-  color: var(--text-primary);
-  font-size: 0.72rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  text-align: center;
-}
-
-/* Flow diagram */
-.flow-diagram {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-}
-
-.flow-node {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 0.78rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.flow-node--dark {
-  background: var(--charcoal);
-  color: var(--gold);
-}
-
-.flow-node--blue {
-  background: var(--sapphire);
-  color: var(--white);
-}
-
-.flow-node--green {
-  background: var(--emerald);
-  color: var(--white);
-}
-
-.flow-node--purple {
-  background: #6c5ce7;
-  color: var(--white);
-}
-
-.flow-node--red {
-  background: var(--ruby);
-  color: var(--white);
-}
-
-.flow-node--gold {
-  background: var(--gold);
-  color: var(--charcoal);
-}
-
-.flow-arrow {
-  color: var(--text-muted);
-  font-size: 1rem;
-  padding: 0 0.15rem;
-}
-
-.flow-arrow-down {
-  display: block;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin: 0.2rem 0;
-}
-
-/* Pie chart */
-.pie-chart-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin: 1rem 0;
-  flex-wrap: wrap;
-}
-
-.pie-chart {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.pie-legend {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.pie-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.82rem;
-}
-
-.pie-legend-swatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-/* Gantt-like timeline */
-.timeline-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.timeline-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.timeline-label {
-  width: 200px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.timeline-track {
-  flex: 1;
-  height: 24px;
-  background: var(--cream);
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-
-.timeline-fill {
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  padding: 0 0.5rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: var(--white);
-  white-space: nowrap;
-}
-
-/* Value pipeline */
-.pipeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  background: var(--cream);
-  border-radius: 8px;
-}
-
-.pipeline-stage {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.pipeline-num {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--charcoal);
-  color: var(--gold);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.7rem;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.pipeline-text {
-  font-size: 0.85rem;
-}
-
-.pipeline-arrow {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-left: 0.6rem;
-}
-
-/* ============================================================
-   CHECKLIST
-   ============================================================ */
-.checklist {
-  list-style: none;
-  padding: 0;
-  margin: 0.8rem 0;
-}
-
-.checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 0.35rem 0;
-  font-size: 0.9rem;
-}
-
-.checklist-box {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--border);
-  border-radius: 3px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* ============================================================
-   FORMULA BOX
-   ============================================================ */
-.formula-box {
-  background: var(--charcoal);
-  color: #e2e8f0;
-  padding: 1rem 1.2rem;
-  border-radius: 6px;
-  font-family: 'Consolas', monospace;
-  font-size: 0.82rem;
-  line-height: 1.7;
-  margin: 0.8rem 0;
-}
-
-/* ============================================================
-   RANKING BADGES
-   ============================================================ */
-.rank-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.72rem;
-  flex-shrink: 0;
-}
-
-.rank-1 { background: linear-gradient(135deg, #d4a843, #f0d68a); color: var(--charcoal); }
-.rank-2 { background: linear-gradient(135deg, #a0a0a8, #d0d0d8); color: var(--charcoal); }
-.rank-3 { background: linear-gradient(135deg, #b87333, #d4956a); color: var(--white); }
-.rank-n { background: var(--sapphire); color: var(--white); }
-
-/* ============================================================
-   PAGE SECTION IMAGES
-   ============================================================ */
-.section-image {
-  width: 100%;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 1rem 0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
-
-/* ============================================================
-   PAGE FOOTER
-   ============================================================ */
-.page-footer {
-  padding: 0.6rem 1in;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-/* ============================================================
-   SECTION SEPARATOR
-   ============================================================ */
-.section-divider {
-  border: none;
-  border-top: 2px solid var(--gold);
-  margin: 2rem 0;
-}
-
-/* ============================================================
-   INFO BOX (Metadata panels)
-   ============================================================ */
-.info-box {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.3rem 1rem;
-  padding: 1rem 1.2rem;
-  background: var(--cream);
-  border-radius: 8px;
-  border: 1px solid var(--border-light);
-  margin: 1rem 0;
-  font-size: 0.9rem;
-}
-
-.info-label {
-  font-weight: 600;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-.info-value {
-  color: var(--text-primary);
-}
-
-/* ============================================================
-   PHASE BADGE
-   ============================================================ */
-.phase-badge {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.2em 0.7em;
-  border-radius: 4px;
-  margin-right: 0.3rem;
-}
-
-.phase-1 { background: var(--emerald); color: var(--white); }
-.phase-2 { background: var(--sapphire); color: var(--white); }
-.phase-3 { background: var(--ruby); color: var(--white); }
-
-/* ============================================================
-   NEXT STEPS / ACTION BOX
-   ============================================================ */
-.action-box {
-  background: linear-gradient(135deg, var(--charcoal) 0%, var(--sapphire) 100%);
-  color: var(--white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-}
-
-.action-box h3 {
-  color: var(--gold);
-  margin-top: 0;
-}
-
-.action-box ol {
-  margin: 0.5rem 0 0 1.5rem;
-  color: rgba(255,255,255,0.9);
-}
-
-.action-box li {
-  margin: 0.4rem 0;
-}
-
-/* ============================================================
-   PRINT STYLES
-   ============================================================ */
-@media print {
-  @page {
-    size: letter;
-    margin: 0.6in 0.65in 0.75in 0.65in;
-  }
-
-  @page :first {
-    margin: 0;
-  }
-
-  html {
-    font-size: 9pt;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  body {
-    background: white !important;
-    color: #1a1a2e !important;
-    line-height: 1.45;
-  }
-
-  .page-container {
-    max-width: none;
-    box-shadow: none !important;
-    margin: 0;
-  }
-
-  /* CRITICAL: Zero out page-content padding so @page margins are the only spacing */
-  .page-content {
-    padding: 0.3in 0 !important;
-  }
-
-  /* Cover page fills first printed page */
-  .cover-page {
-    min-height: 0;
-    height: 100vh;
-    page-break-after: always;
-    margin: 0;
-    padding: 0.5in;
-  }
-
-  .cover-logo {
-    width: 130px;
-  }
-
-  .cover-company {
-    font-size: 2rem;
-  }
-
-  .cover-hero-img {
-    max-width: 380px;
-    max-height: 220px;
-    object-fit: cover;
-  }
-
-  /* TOC on its own page */
-  .toc-container {
-    page-break-after: always;
-  }
-
-  /* Each section starts on new page */
-  .page-break-before,
-  .section-break {
-    page-break-before: always;
-  }
-
-  .page-break-after {
-    page-break-after: always;
-  }
-
-  /* Prevent orphaned headings */
-  h1, h2, h3, h4 {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-    margin-top: 0;
-  }
-
-  h2 {
-    font-size: 1.1rem;
-  }
-
-  h3 {
-    font-size: 0.95rem;
-  }
-
-  /* Tables: compact for print */
-  table {
-    page-break-inside: avoid;
-    font-size: 0.75rem;
-    margin: 0.4rem 0 0.8rem 0;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  thead th {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.7rem;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background: #1a1a2e !important;
-    color: white !important;
-  }
-
-  tbody td {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  /* Keep tables, callouts, diagrams together */
-  .callout,
-  .diagram-container,
-  .formula-box,
-  .checklist {
-    page-break-inside: avoid;
-  }
-
-  .callout {
-    padding: 0.6rem 0.8rem;
-    margin: 0.5rem 0;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  /* Don't break rows across pages */
-  tr {
-    page-break-inside: avoid;
-  }
-
-  /* Running header — use static, not fixed (fixed causes overlap in PDF) */
-  .running-header {
-    display: none;
-  }
-
-  /* Page footer — hide in print (use @page margin instead) */
-  .page-footer {
-    display: none;
-  }
-
-  /* Print instruction banner — hide */
-  .print-banner {
-    display: none !important;
-  }
-
-  /* Links: clean for print */
-  a {
-    color: #1a1a2e !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
-
-  a[href^="http"]::after {
-    content: none !important;
-  }
-
-  /* Constrain images */
-  .section-image {
-    max-height: 160px;
-    object-fit: cover;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  /* No hover effects in print */
-  tbody tr:hover {
-    background: inherit !important;
-  }
-
-  /* Gold total rows must print */
-  tr.total-row td,
-  tr.total-row th {
-    background: #d4a843 !important;
-    color: #1a1a2e !important;
-    -webkit-print-color-adjust: exact !important;
-  }
-
-  /* Zebra stripe backgrounds print */
-  tbody tr:nth-child(even) {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  /* Diagrams compact */
-  .diagram-container {
-    margin: 0.5rem 0;
-  }
-
-  /* Section images */
-  .section-image-container {
-    margin: 0.5rem 0;
-  }
-}
-
-/* ============================================================
-   SCREEN ONLY SHADOW
-   ============================================================ */
-@media screen {
-  .page-container {
-    box-shadow: 0 0 40px rgba(0,0,0,0.1);
-    margin: 1rem auto;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Southeastern Lapidary Associates - Business Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        @page {
+            margin: 0.6in 0.7in;
+            size: letter;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            line-height: 1.7;
+            font-size: 10.5pt;
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            page-break-after: avoid;
+            color: #1a1a2e;
+            margin-top: 1.5em;
+        }
+        a {
+            color: #1e3a5f;
+            text-decoration: none;
+        }
+        .cover {
+            page-break-after: always;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #1e3a5f);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2in;
+            box-sizing: border-box;
+        }
+        .cover img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .cover h1 {
+            color: white;
+            font-size: 32pt;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        .cover h2 {
+            color: #d4a843;
+            font-size: 18pt;
+            font-weight: 400;
+            margin: 0 0 40px 0;
+        }
+        .cover p {
+            font-size: 12pt;
+            color: #f5f0e8;
+        }
+        .toc {
+            page-break-after: always;
+            padding-top: 1in;
+        }
+        .toc h2 {
+            margin-top: 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc li {
+            margin-bottom: 10px;
+            font-size: 11pt;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+        .toc a {
+            color: #1a1a2e;
+        }
+        .section-header {
+            page-break-before: always;
+            background: linear-gradient(90deg, #1a1a2e, #1e3a5f);
+            color: white;
+            padding: 15px 20px;
+            border-left: 8px solid #d4a843;
+            margin: 0 0 20px 0;
+            font-size: 20pt;
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        th, td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            background-color: #1a1a2e;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        tr.total-row {
+            background-color: #f5f0e8;
+            border-top: 2px solid #d4a843;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+        .callout {
+            border-left: 4px solid #d4a843;
+            background-color: #f5f0e8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: bold;
+            color: #9b2335;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 9pt;
+            letter-spacing: 0.5px;
+        }
+        .diagram {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+            font-family: 'Inter', sans-serif;
+            font-size: 9pt;
+        }
+        .tree-level {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tree-node {
+            background: #16213e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border-bottom: 3px solid #0f3460;
+            text-align: center;
+        }
+        .tree-node.accent {
+            background: #1a1a2e;
+            border-bottom: 3px solid #e94560;
+        }
+        .flow-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .flow-node {
+            background: #0984e3;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .flow-node.dark {
+            background: #2d3436;
+        }
+        .flow-node.purple {
+            background: #6c5ce7;
+        }
+        .flow-arrow {
+            color: #666;
+            font-weight: bold;
+        }
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bar-label {
+            width: 150px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        .bar {
+            height: 20px;
+            background: #1a1a2e;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            color: white;
+            font-size: 8pt;
+        }
+        .timeline {
+            border-left: 2px solid #1a1a2e;
+            padding-left: 20px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        .timeline-item {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4a843;
+            border: 2px solid #1a1a2e;
+        }
+        .timeline-title {
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+            color: #1a1a2e;
+        }
+        .timeline-desc {
+            font-size: 9.5pt;
+            color: #4b5563;
+        }
+        .footer {
+            text-align: center;
+            font-size: 8pt;
+            color: #6b7280;
+            margin-top: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+        }
+        ul, ol {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
 
-<!-- ============================================================
-     COVER PAGE
-     ============================================================ -->
-<div class="print-banner">
-  <strong>To save as PDF:</strong> Press Ctrl+P &rarr; check "Background graphics" &rarr; set Margins to "None" &rarr; Save as PDF
-</div>
-
-<div class="cover-page">
-  <img src="assets/images/sla-logo.png" alt="SLA Logo" class="cover-logo">
-  <div class="cover-company">Southeastern Lapidary Associates</div>
-  <hr class="cover-divider">
-  <div class="cover-tagline">From Earth to Art, Stone by Stone</div>
-  <div class="cover-subtitle">Comprehensive Business Plan &mdash; Updated July 2026</div>
-  <div class="cover-detail">A DBA of Donald Herbin's Landscaping LLC &nbsp;|&nbsp; Greensboro, North Carolina</div>
-  <img src="assets/images/hero-stone-cutting.png" alt="Artisan stone cutting process" class="cover-hero-img">
-  <div class="cover-footer">Prepared by Think! Design and Planning, LLC for Donald Herbin</div>
-</div>
-
-<div class="page-container">
-
-<!-- ============================================================
-     RUNNING HEADER
-     ============================================================ -->
-<div class="running-header">
-  <img src="assets/images/sla-logo.png" alt="SLA" class="running-header-logo">
-  <span class="running-header-text">Comprehensive Business Plan &mdash; July 2026</span>
-</div>
-
-<!-- ============================================================
-     TABLE OF CONTENTS
-     ============================================================ -->
-<div class="page-content page-break-after">
-  <div class="toc">
-    <div class="toc-title">Table of Contents</div>
-    <ul class="toc-list">
-      <li><a href="#sec1"><span class="toc-num">1</span><span class="toc-text">Executive Summary</span></a></li>
-      <li><a href="#sec2"><span class="toc-num">2</span><span class="toc-text">Industry Analysis &amp; Market Research</span></a></li>
-      <li><a href="#sec3"><span class="toc-num">3</span><span class="toc-text">Business Description &amp; Legal Structure</span></a></li>
-      <li><a href="#sec4"><span class="toc-num">4</span><span class="toc-text">Products, Services &amp; Revenue Streams</span></a></li>
-      <li><a href="#sec5"><span class="toc-num">5</span><span class="toc-text">Adjacent Revenue Streams (Low-Effort / High-Return)</span></a></li>
-      <li><a href="#sec6"><span class="toc-num">6</span><span class="toc-text">Equipment &amp; Infrastructure</span></a></li>
-      <li><a href="#sec7"><span class="toc-num">7</span><span class="toc-text">North Carolina Gem Resources &amp; Sourcing</span></a></li>
-      <li><a href="#sec8"><span class="toc-num">8</span><span class="toc-text">Vietnam Sourcing Strategy (Phase 3)</span></a></li>
-      <li><a href="#sec8a"><span class="toc-num">8A</span><span class="toc-text">Digital Platform &amp; E-Commerce Strategy</span></a></li>
-      <li><a href="#sec9"><span class="toc-num">9</span><span class="toc-text">Marketing &amp; Sales Strategy</span></a></li>
-      <li><a href="#sec10"><span class="toc-num">10</span><span class="toc-text">Operations Plan</span></a></li>
-      <li><a href="#sec11"><span class="toc-num">11</span><span class="toc-text">Financial Projections (3-Year)</span></a></li>
-      <li><a href="#sec12"><span class="toc-num">12</span><span class="toc-text">Implementation Timeline</span></a></li>
-      <li><a href="#sec13"><span class="toc-num">13</span><span class="toc-text">Risk Analysis &amp; Mitigation</span></a></li>
-      <li><a href="#sec14"><span class="toc-num">14</span><span class="toc-text">Appendices</span></a></li>
-    </ul>
-  </div>
-
-  <!-- Metadata box -->
-  <div class="info-box" style="margin-top:1.5rem;">
-    <span class="info-label">Prepared:</span><span class="info-value">July 17, 2026</span>
-    <span class="info-label">Owner:</span><span class="info-value">Donald Herbin</span>
-    <span class="info-label">Legal Structure:</span><span class="info-value">DBA under existing Landscaping LLC</span>
-    <span class="info-label">Location:</span><span class="info-value">Greensboro, NC (Guilford County)</span>
-    <span class="info-label">Initial Capital:</span><span class="info-value">~$5,000 (equipment)</span>
-  </div>
-</div>
-
-<!-- ============================================================
-     SECTION 1: EXECUTIVE SUMMARY
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec1">
-  <h1><span class="section-num">1</span> Executive Summary</h1>
-
-  <p><strong>Southeastern Lapidary Associates</strong> (SLA) will operate as a DBA under Donald Herbin's existing landscaping LLC, providing professional lapidary services &mdash; the art and science of cutting, shaping, polishing, and finishing gemstones and ornamental stones. Based in Greensboro, NC, the business will capitalize on North Carolina's rich gemological heritage (the state is home to rubies, sapphires, emeralds, and garnets) and the growing U.S. market for colored gemstones.</p>
-
-  <h2>The Opportunity</h2>
-  <table>
-    <thead><tr><th>Factor</th><th>Detail</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Market Size</strong></td><td>U.S. colored gemstone market projected to grow at <strong>6&ndash;7% CAGR through 2033</strong></td></tr>
-      <tr><td><strong>Consumer Trend</strong></td><td>"Jewelry premiumization" &mdash; fewer purchases, higher spend per piece</td></tr>
-      <tr><td><strong>NC Advantage</strong></td><td>One of the most gem-rich states in the U.S. (rubies, sapphires, emeralds, garnets)</td></tr>
-      <tr><td><strong>Competitive Edge</strong></td><td>Direct Vietnam sourcing (Phase 3) = <strong>40&ndash;60% cost reduction</strong> on raw material</td></tr>
-      <tr><td><strong>Synergy</strong></td><td>Landscaping LLC provides existing business infrastructure, client base, and cash flow</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Business Model Summary</h2>
-  <p>SLA will generate revenue through <strong>five primary channels</strong>:</p>
-  <ol>
-    <li><strong>Custom Stone Cutting &amp; Polishing</strong> &mdash; B2B and B2C services for jewelers, collectors, and hobbyists</li>
-    <li><strong>Finished Stone Sales</strong> &mdash; Cabochons, faceted stones, and tumbled stones sold online and at gem shows</li>
-    <li><strong>Rough Stone Sales</strong> &mdash; NC-sourced and eventually Vietnam-sourced rough material</li>
-    <li><strong>Workshops &amp; Classes</strong> &mdash; Hands-on lapidary instruction for hobbyists</li>
-    <li><strong>Wholesale to Jewelers</strong> &mdash; Volume supply relationships with independent jewelry makers</li>
-  </ol>
-
-  <h2>Phase Rollout</h2>
-  <table>
-    <thead><tr><th>Phase</th><th>Timeline</th><th>Work Mode</th><th>Focus</th><th>Investment</th></tr></thead>
-    <tbody>
-      <tr><td><span class="phase-badge phase-1">Phase 1</span> Foundation</td><td>Months 1&ndash;12</td><td><strong>Part-Time</strong> (20&ndash;25 hrs/wk)</td><td>Equipment setup, skill building, NC sourcing, local sales</td><td>$5,000&ndash;$6,500</td></tr>
-      <tr><td><span class="phase-badge phase-2">Phase 2</span> Full-Time</td><td>Months 13&ndash;24</td><td><strong>Full-Time</strong> (40&ndash;50 hrs/wk)</td><td>Scale production, online growth, workshops, adjacent revenue</td><td>$5,000&ndash;$8,000</td></tr>
-      <tr><td><span class="phase-badge phase-3">Phase 3</span> Vietnam + Scale</td><td>Months 24&ndash;36</td><td><strong>Full-Time</strong></td><td>Direct Vietnam sourcing, wholesale expansion, jewelry integration</td><td>$8,000&ndash;$15,000</td></tr>
-    </tbody>
-  </table>
-
-  <img src="assets/images/polished-gemstones.png" alt="Polished gemstones collection" class="section-image">
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 2: INDUSTRY ANALYSIS
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec2">
-  <h1><span class="section-num">2</span> Industry Analysis &amp; Market Research</h1>
-
-  <h2>2.1 The Lapidary Industry</h2>
-  <p>The lapidary industry encompasses the cutting, shaping, polishing, and engraving of stones &mdash; both precious gemstones and semi-precious ornamental materials. It sits at the intersection of <strong>artisanal craftsmanship</strong>, <strong>geology</strong>, and the <strong>jewelry supply chain</strong>.</p>
-
-  <h3>Market Segments</h3>
-  <div class="diagram-container">
-    <div class="diagram-title">Lapidary Industry Segments</div>
-    <div class="tree-diagram">
-      <div class="tree-root">Lapidary Industry</div>
-      <div class="tree-branches" style="gap:0.8rem;">
-        <div class="tree-branch">
-          <div class="tree-node">Cabochon Cutting</div>
-          <div class="tree-leaf">Jewelry Makers</div>
-          <div class="tree-leaf">Metaphysical Shops</div>
+    <div class="cover">
+        <img src="assets/images/sla-logo.png" alt="SLA Logo" onerror="this.style.display='none'">
+        <h1>Southeastern Lapidary Associates</h1>
+        <h2>From Earth to Art, Stone by Stone</h2>
+        <div style="margin-top: 40px;">
+            <p><strong>Comprehensive Business Plan & Implementation Strategy</strong></p>
+            <p>A DBA of Donald Herbin's Landscaping LLC | Greensboro, North Carolina</p>
+            <p style="margin-top: 30px;">Prepared: July 17, 2026</p>
         </div>
-        <div class="tree-branch">
-          <div class="tree-node">Faceting</div>
-          <div class="tree-leaf">Fine Jewelry</div>
-          <div class="tree-leaf">Collectors</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Tumbling</div>
-          <div class="tree-leaf">Hobbyists</div>
-          <div class="tree-leaf">Craft Fairs</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Slabbing &amp; Bookends</div>
-          <div class="tree-leaf">Home Decor</div>
-          <div class="tree-leaf">Mineral Dealers</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Carving &amp; Sculpture</div>
-          <div class="tree-leaf">Art Market</div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <h3>Key Industry Metrics</h3>
-  <table>
-    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-    <tbody>
-      <tr><td>U.S. Colored Gemstone Market CAGR</td><td>6&ndash;7% (through 2033)</td></tr>
-      <tr><td>Typical Gross Profit Margins</td><td>20&ndash;60% (depending on sourcing &amp; value-add)</td></tr>
-      <tr><td>Home-Based Startup Cost</td><td>$3,000&ndash;$7,000</td></tr>
-      <tr><td>Professional Workshop Cost</td><td>$8,000&ndash;$25,000+</td></tr>
-      <tr><td>Key Growth Driver</td><td>Colored engagement stones (emerald, sapphire, ruby)</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Industry Trends Favoring SLA</h3>
-  <ol>
-    <li><strong>Premiumization</strong> &mdash; Consumers buying fewer, higher-quality pieces favors custom/artisan work over mass production</li>
-    <li><strong>Colored Stone Renaissance</strong> &mdash; Shift from diamond-centric to colored engagement rings (sapphire, emerald, morganite)</li>
-    <li><strong>Origin Story Marketing</strong> &mdash; Buyers increasingly value provenance (NC-mined, ethically sourced)</li>
-    <li><strong>Maker Economy</strong> &mdash; Growing community of independent jewelers seeking reliable stone suppliers</li>
-    <li><strong>Metaphysical/Wellness Market</strong> &mdash; Crystals and healing stones represent a multi-billion-dollar niche</li>
-  </ol>
-
-  <h2>2.2 Competitive Landscape</h2>
-
-  <h3>Direct Competitors (Southeast Region)</h3>
-  <table>
-    <thead><tr><th>Competitor Type</th><th>Examples</th><th>SLA Advantage</th></tr></thead>
-    <tbody>
-      <tr><td>Local Lapidaries</td><td>Individual hobbyists selling at shows</td><td>Professional-grade equipment, consistent quality</td></tr>
-      <tr><td>Online Stone Sellers</td><td>Etsy/eBay shops</td><td>NC provenance story, local pickup, custom work</td></tr>
-      <tr><td>NC Mine Gift Shops</td><td>Franklin, Hiddenite shops</td><td>Year-round availability, custom cutting services</td></tr>
-      <tr><td>Wholesale Importers</td><td>Large gem dealers (Rio Grande, Fire Mountain)</td><td>Personal service, niche/rare stones, local relationships</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Competitive Advantages</h3>
-  <ul>
-    <li><strong>NC Location</strong> &mdash; Access to native rubies, sapphires, garnets, emeralds (Hiddenite)</li>
-    <li><strong>Landscaping Synergy</strong> &mdash; Existing LLC, client relationships, transportation/logistics infrastructure</li>
-    <li><strong>Vietnam Direct Sourcing</strong> &mdash; Future cost advantage of 40&ndash;60% on premium rough material</li>
-    <li><strong>Local Maker Partnerships</strong> &mdash; Greensboro/Triad jewelry makers need reliable local stone suppliers</li>
-  </ul>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 3: BUSINESS DESCRIPTION & LEGAL
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec3">
-  <h1><span class="section-num">3</span> Business Description &amp; Legal Structure</h1>
-
-  <h2>3.1 Legal Setup</h2>
-  <table>
-    <thead><tr><th>Item</th><th>Detail</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Legal Entity</strong></td><td>Existing Landscaping LLC (NC)</td></tr>
-      <tr><td><strong>Trade Name (DBA)</strong></td><td>Southeastern Lapidary Associates</td></tr>
-      <tr><td><strong>Filing Type</strong></td><td>NC Assumed Business Name Certificate</td></tr>
-      <tr><td><strong>Filing Office</strong></td><td>Guilford County Register of Deeds</td></tr>
-      <tr><td><strong>Filing Fee</strong></td><td>$26 (in-person/mail) or ~$41 (e-filing)</td></tr>
-      <tr><td><strong>Renewal</strong></td><td>None required (file withdrawal if discontinued)</td></tr>
-    </tbody>
-  </table>
-
-  <h2>3.2 DBA Registration Steps</h2>
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Step-by-Step Process for Donald
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li>1. Executive Summary</li>
+            <li>2. Industry Analysis & Market Research</li>
+            <li>3. Business Description & Legal Structure</li>
+            <li>4. Products, Services & Revenue Streams</li>
+            <li>5. Adjacent Revenue Streams (Low-Effort / High-Return)</li>
+            <li>6. Equipment & Infrastructure</li>
+            <li>7. North Carolina Gem Resources & Sourcing</li>
+            <li>8. Vietnam Sourcing Strategy (Phase 3)</li>
+            <li>9. Marketing & Sales Strategy</li>
+            <li>10. Digital Platform & E-Commerce Strategy</li>
+            <li>11. Operations Plan</li>
+            <li>12. Financial Projections (3-Year)</li>
+            <li>13. Implementation Timeline</li>
+            <li>14. Risk Analysis & Mitigation</li>
+            <li>15. Appendices</li>
+        </ul>
     </div>
-    <div class="callout-body">
-      <ol>
-        <li><strong>Search name availability</strong> &mdash; Check the NC Secretary of State business name database for "Southeastern Lapidary Associates"</li>
-        <li><strong>Check Guilford County</strong> &mdash; Verify at the Guilford County Register of Deeds that the name isn't already filed locally</li>
-        <li><strong>Complete the Assumed Business Name Certificate</strong> &mdash; Include the exact legal name of the LLC and your SOSID number</li>
-        <li><strong>File the certificate</strong> &mdash; Submit to Guilford County Register of Deeds (in-person, mail, or e-file)</li>
-        <li><strong>Pay the fee</strong> &mdash; $26 recording fee (+ $15 convenience fee if e-filing)</li>
-        <li><strong>Obtain EIN?</strong> &mdash; If using the existing LLC's EIN, no new one is needed. The DBA operates under the LLC's tax structure</li>
-      </ol>
-    </div>
-  </div>
 
-  <h2>3.3 Additional Requirements</h2>
-  <table>
-    <thead><tr><th>Requirement</th><th>Detail</th><th>Est. Cost</th></tr></thead>
-    <tbody>
-      <tr><td>NC Sales Tax Certificate</td><td>Required for retail sales &mdash; file with NC DOR</td><td>Free</td></tr>
-      <tr><td>Greensboro Business Privilege License</td><td>Check with City of Greensboro</td><td>Varies</td></tr>
-      <tr><td>Home Occupation Permit</td><td>If operating from home workshop</td><td>~$0&ndash;$50</td></tr>
-      <tr><td>General Liability Insurance</td><td>Covers equipment, premises, products</td><td>$500&ndash;$1,200/yr</td></tr>
-      <tr><td>Inland Marine Insurance</td><td>Covers high-value stone inventory in transit</td><td>$300&ndash;$600/yr</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 4: PRODUCTS, SERVICES & REVENUE
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec4">
-  <h1><span class="section-num">4</span> Products, Services &amp; Revenue Streams</h1>
-
-  <h2>4.1 Core Revenue Streams</h2>
-
-  <!-- CSS Pie Chart replacing Mermaid -->
-  <div class="diagram-container">
-    <div class="diagram-title">Projected Revenue Mix (Year 2)</div>
-    <div class="pie-chart-container">
-      <div class="pie-chart" style="background: conic-gradient(
-        var(--charcoal) 0deg 108deg,
-        var(--sapphire) 108deg 198deg,
-        var(--emerald) 198deg 252deg,
-        var(--ruby) 252deg 306deg,
-        var(--gold) 306deg 360deg
-      );"></div>
-      <div class="pie-legend">
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--charcoal)"></span> Custom Cutting Services (30%)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--sapphire)"></span> Finished Stone Sales (25%)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--emerald)"></span> Rough Stone Sales (15%)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--ruby)"></span> Workshops &amp; Classes (15%)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--gold)"></span> Wholesale to Jewelers (15%)</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>4.2 Detailed Product/Service Catalog</h2>
-
-  <h3>A. Custom Stone Cutting &amp; Polishing Services</h3>
-  <table>
-    <thead><tr><th>Service</th><th>Description</th><th>Price Range</th></tr></thead>
-    <tbody>
-      <tr><td>Cabochon Cutting</td><td>Shaped, polished dome stones from rough</td><td>$15&ndash;$75/stone</td></tr>
-      <tr><td>Faceting</td><td>Precision-cut gemstones with geometric facets</td><td>$50&ndash;$300+/stone</td></tr>
-      <tr><td>Slab Cutting</td><td>Cut rough rock into display slabs</td><td>$5&ndash;$25/cut</td></tr>
-      <tr><td>Tumbling Service</td><td>Batch tumbling for hobbyists/collectors</td><td>$10&ndash;$30/lb</td></tr>
-      <tr><td>Repair/Repolish</td><td>Recut or repolish damaged stones</td><td>$20&ndash;$100/stone</td></tr>
-    </tbody>
-  </table>
-
-  <h3>B. Finished Stone Sales</h3>
-  <table>
-    <thead><tr><th>Product</th><th>Description</th><th>Price Range</th></tr></thead>
-    <tbody>
-      <tr><td>NC Ruby/Sapphire Cabochons</td><td>Native Cowee Valley material</td><td>$25&ndash;$200+</td></tr>
-      <tr><td>Agate/Jasper Cabochons</td><td>Varied patterns, jewelry-ready</td><td>$8&ndash;$50</td></tr>
-      <tr><td>Tumbled Stones (bulk)</td><td>Mixed lots for resale/metaphysical</td><td>$3&ndash;$15/lb</td></tr>
-      <tr><td>Specimen Slabs</td><td>Display-quality polished slabs</td><td>$15&ndash;$100+</td></tr>
-      <tr><td>Faceted Gemstones</td><td>Precision-cut for fine jewelry</td><td>$50&ndash;$500+</td></tr>
-    </tbody>
-  </table>
-
-  <h3>C. Rough Stone Sales</h3>
-  <table>
-    <thead><tr><th>Product</th><th>Description</th><th>Price Range</th></tr></thead>
-    <tbody>
-      <tr><td>NC-Sourced Rough</td><td>Cowee Valley ruby/sapphire, Hiddenite emerald</td><td>$10&ndash;$100+/lot</td></tr>
-      <tr><td>Mixed Lapidary Rough</td><td>Agate, jasper, obsidian, opal</td><td>$5&ndash;$30/lb</td></tr>
-      <tr><td>Premium Import Rough (Phase 3)</td><td>Vietnam ruby, sapphire, spinel</td><td>$20&ndash;$500+/lot</td></tr>
-    </tbody>
-  </table>
-
-  <h3>D. Workshops &amp; Classes</h3>
-  <table>
-    <thead><tr><th>Offering</th><th>Description</th><th>Price</th></tr></thead>
-    <tbody>
-      <tr><td>Intro to Lapidary (3hr)</td><td>Basics of cutting &amp; polishing, take home a stone</td><td>$75&ndash;$100/person</td></tr>
-      <tr><td>Cabochon Workshop (full day)</td><td>Cut and polish your own cabochon</td><td>$125&ndash;$175/person</td></tr>
-      <tr><td>Private Lessons</td><td>1-on-1 instruction</td><td>$60&ndash;$80/hour</td></tr>
-      <tr><td>Kids/Group Events</td><td>Birthday parties, scout troops</td><td>$25&ndash;$40/child</td></tr>
-    </tbody>
-  </table>
-
-  <h3>E. Wholesale Supply</h3>
-  <table>
-    <thead><tr><th>Channel</th><th>Description</th><th>Terms</th></tr></thead>
-    <tbody>
-      <tr><td>Local Jewelers</td><td>Ongoing supply of cut stones</td><td>Net 30, volume pricing</td></tr>
-      <tr><td>Etsy/Online Sellers</td><td>Bulk cabochons and rough</td><td>Prepaid, lot pricing</td></tr>
-      <tr><td>Metaphysical Shops</td><td>Tumbled stones, crystals, rough</td><td>Consignment or wholesale</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 5: ADJACENT REVENUE STREAMS
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec5">
-  <h1><span class="section-num">5</span> Adjacent Revenue Streams (Low-Effort / High-Return)</h1>
-
-  <div class="callout callout-tip">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1a3 3 0 00-3 3v1H4a1 1 0 00-1 1v1.5a5.006 5.006 0 004 4.9V14H5v1h6v-1H9v-1.6a5.006 5.006 0 004-4.9V6a1 1 0 00-1-1h-1V4a3 3 0 00-3-3z"/></svg></span>
-      Money Multipliers
-    </div>
-    <div class="callout-body">
-      <p>These are activities that leverage Donald's existing skills, equipment, and landscaping LLC with minimal additional effort. Each one is designed to stack on top of core lapidary work.</p>
-    </div>
-  </div>
-
-  <h2>5.1 The Power Rankings &mdash; Effort vs. Income</h2>
-  <table>
-    <thead><tr><th>Rank</th><th>Adjacent Stream</th><th>Startup Cost</th><th>Monthly Rev. Potential</th><th>Effort</th><th>Start</th></tr></thead>
-    <tbody>
-      <tr><td><span class="rank-badge rank-1">1</span></td><td><strong>Wire-Wrapped Jewelry</strong></td><td>$50&ndash;$150</td><td>$1,000&ndash;$3,000</td><td>Low&ndash;Medium</td><td>Month 3</td></tr>
-      <tr><td><span class="rank-badge rank-2">2</span></td><td><strong>Landscape Stone Upsells</strong> (LLC synergy)</td><td>$0</td><td>$500&ndash;$2,000</td><td>Very Low</td><td>Month 1</td></tr>
-      <tr><td><span class="rank-badge rank-3">3</span></td><td><strong>Consignment in Local Shops</strong></td><td>$0</td><td>$300&ndash;$800</td><td>Very Low</td><td>Month 4</td></tr>
-      <tr><td><span class="rank-badge rank-n">4</span></td><td><strong>YouTube/TikTok Content</strong></td><td>$0</td><td>$200&ndash;$2,000+</td><td>Low</td><td>Month 2</td></tr>
-      <tr><td><span class="rank-badge rank-n">5</span></td><td><strong>Monthly Subscription Boxes</strong></td><td>$200</td><td>$500&ndash;$2,000</td><td>Low&ndash;Medium</td><td>Month 8</td></tr>
-      <tr><td><span class="rank-badge rank-n">6</span></td><td><strong>Tumbled Stone Lots</strong> (metaphysical)</td><td>$100</td><td>$300&ndash;$1,000</td><td>Very Low</td><td>Month 2</td></tr>
-      <tr><td><span class="rank-badge rank-n">7</span></td><td><strong>Wedding/Event Favors</strong></td><td>$0</td><td>$300&ndash;$1,500</td><td>Low</td><td>Month 6</td></tr>
-      <tr><td><span class="rank-badge rank-n">8</span></td><td><strong>Stone Drilling Service</strong></td><td>$75</td><td>$200&ndash;$500</td><td>Very Low</td><td>Month 3</td></tr>
-      <tr><td><span class="rank-badge rank-n">9</span></td><td><strong>Affiliate Equipment Reviews</strong></td><td>$0</td><td>$100&ndash;$500</td><td>Very Low</td><td>Month 6</td></tr>
-      <tr><td><span class="rank-badge rank-n">10</span></td><td><strong>Home Decor</strong> (Bookends/Coasters)</td><td>$50</td><td>$200&ndash;$800</td><td>Low</td><td>Month 4</td></tr>
-      <tr><td><span class="rank-badge rank-n">11</span></td><td><strong>Digital Products</strong> (Guides/Charts)</td><td>$0</td><td>$100&ndash;$400</td><td>One-time</td><td>Month 8</td></tr>
-      <tr><td><span class="rank-badge rank-n">12</span></td><td><strong>Pet Memorial Stones</strong></td><td>$0</td><td>$200&ndash;$600</td><td>Low</td><td>Month 6</td></tr>
-    </tbody>
-  </table>
-
-  <h2>5.2 Detailed Breakdown</h2>
-
-  <h3>#1: Wire-Wrapped Jewelry (The Biggest Lever)</h3>
-  <p>This is the single most important adjacent move Donald can make. A $5 cabochon becomes a <strong>$40&ndash;$150 pendant</strong> with 30 minutes of wire wrapping.</p>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Wrap cut cabochons in copper, silver, or gold-filled wire to make pendants/rings</td></tr>
-      <tr><td><strong>Startup Cost</strong></td><td>$50&ndash;$150 (wire, pliers, mandrels)</td></tr>
-      <tr><td><strong>Skill Time</strong></td><td>2&ndash;4 weeks of YouTube tutorials to learn basics</td></tr>
-      <tr><td><strong>Markup</strong></td><td>5x&ndash;15x the value of a loose stone</td></tr>
-      <tr><td><strong>Best Sellers</strong></td><td>Pendants ($40&ndash;$150), tree-of-life pieces, statement rings</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>Customers want <em>wearable</em> pieces, not loose stones sitting in a drawer</td></tr>
-    </tbody>
-  </table>
-  <blockquote>
-    <p><strong>Example Math:</strong></p>
-    <ul>
-      <li>Raw NC ruby rough: <strong>$3</strong></li>
-      <li>Cut &amp; polished cabochon: <strong>$15&ndash;$25</strong> (4x markup)</li>
-      <li>Wire-wrapped pendant: <strong>$65&ndash;$150</strong> (20x&ndash;50x markup on raw material)</li>
-    </ul>
-  </blockquote>
-
-  <h3>#2: Landscape Stone Upsells (Donald's Secret Weapon)</h3>
-  <p>This is the synergy play that <strong>no other lapidary has</strong>. Donald already has landscaping clients, trucks, and outdoor access.</p>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Offer polished accent stones, engraved garden stones, decorative rock features to existing landscaping clients</td></tr>
-      <tr><td><strong>Startup Cost</strong></td><td>$0 (uses existing equipment + client relationships)</td></tr>
-      <tr><td><strong>Products</strong></td><td>Polished river rock borders, engraved address stones, tumbled stone garden beds, polished stepping stones</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$50&ndash;$500 per project as an add-on to landscaping jobs</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>It's an <strong>upsell to people already paying him</strong> &mdash; zero customer acquisition cost</td></tr>
-    </tbody>
-  </table>
-  <blockquote>
-    <p><strong>Example:</strong> Landscaping client spends $3,000 on a patio. Donald offers a set of polished stone accent pieces for $200&ndash;$500 extra. That's a 7&ndash;17% upsell with zero additional marketing.</p>
-  </blockquote>
-
-  <h3>#3: Consignment in Local Shops</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Place finished stones, jewelry, and tumbled lots in local shops on consignment</td></tr>
-      <tr><td><strong>Target Shops</strong></td><td>Metaphysical/crystal shops, boutiques, gift shops, coffee shops with retail, museum gift shops</td></tr>
-      <tr><td><strong>Split</strong></td><td>Typically 60/40 or 70/30 (in your favor)</td></tr>
-      <tr><td><strong>Greensboro Targets</strong></td><td>Crystal shops on Elm St, Scuppernong Books, boutiques in Friendly Center area</td></tr>
-      <tr><td><strong>Effort</strong></td><td>Drop off inventory monthly, collect payment &mdash; that's it</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#4: YouTube/TikTok Content (Viral Potential)</h3>
-  <p>Stone cutting videos are <strong>some of the most satisfying content on the internet.</strong> They go viral routinely.</p>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Film the cutting/polishing process, before/after reveals, NC mining trips</td></tr>
-      <tr><td><strong>Monetization</strong></td><td>YouTube Partner ($3&ndash;$8 per 1,000 views), affiliate links to equipment, drive store sales</td></tr>
-      <tr><td><strong>Equipment</strong></td><td>Phone camera + $30 phone mount (already has the equipment)</td></tr>
-      <tr><td><strong>Viral Formats</strong></td><td>"Rock vs. Saw," before/after reveals, "What's inside this ugly rock?", NC mine adventures</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>Content creates itself from daily work &mdash; zero extra production time</td></tr>
-      <tr><td><strong>Channel Growth</strong></td><td>1,000 subscribers in 3&ndash;6 months is realistic with consistent posting</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#5: Monthly Subscription Boxes</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Curated monthly box of tumbled stones, rough specimens, and a cut gemstone</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$29.99&ndash;$49.99/month</td></tr>
-      <tr><td><strong>Platform</strong></td><td>Cratejoy, Subbly, or direct through website</td></tr>
-      <tr><td><strong>Contents</strong></td><td>3&ndash;5 tumbled stones + 1 rough specimen + 1 cabochon + info card with stone properties</td></tr>
-      <tr><td><strong>Target</strong></td><td>Crystal collectors, rockhound hobbyists, metaphysical community</td></tr>
-      <tr><td><strong>Margin</strong></td><td>50&ndash;60% (material cost ~$8&ndash;$15 per box)</td></tr>
-      <tr><td><strong>Scale</strong></td><td>50 subscribers = $1,500&ndash;$2,500/month</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#6: Tumbled Stone Lots (Metaphysical Market)</h3>
-  <p>The crystal/metaphysical market is <strong>massive</strong> &mdash; estimated at $2B+ in the U.S. Tumbled stones are the easiest product to produce at volume.</p>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Batch-tumble stones, package in labeled bags with "healing properties" cards</td></tr>
-      <tr><td><strong>Best Sellers</strong></td><td>Amethyst, rose quartz, obsidian, tiger's eye, labradorite</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$3&ndash;$8 per stone retail, $15&ndash;$30/lb wholesale</td></tr>
-      <tr><td><strong>Channels</strong></td><td>Metaphysical shops, Etsy, craft fairs, yoga studios</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>Tumblers run unattended 24/7 &mdash; truly passive production</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#7: Wedding &amp; Event Favors</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Custom tumbled stone sets as wedding favors, corporate gifts, or event giveaways</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$3&ndash;$8 per favor (orders of 50&ndash;200+ pieces)</td></tr>
-      <tr><td><strong>Revenue</strong></td><td>Single wedding order = $150&ndash;$1,600</td></tr>
-      <tr><td><strong>Marketing</strong></td><td>Wedding planners, The Knot, local bridal shops</td></tr>
-      <tr><td><strong>Customization</strong></td><td>Organza bags with couple's names, info cards about the stone's meaning</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#8: Stone Drilling Service</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Drill holes in beach stones, cabochons, and crystals for pendant-making</td></tr>
-      <tr><td><strong>Equipment</strong></td><td>Diamond core drill bit set (~$25) + drill press or Dremel</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$5&ndash;$15 per stone</td></tr>
-      <tr><td><strong>Customers</strong></td><td>Wire wrappers, jewelry makers, Etsy sellers who need pre-drilled stones</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#9: Affiliate Equipment Reviews</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Review lapidary equipment on YouTube, link to Amazon/manufacturer affiliate programs</td></tr>
-      <tr><td><strong>Commission</strong></td><td>3&ndash;8% per sale (a $1,500 cabbing machine = $45&ndash;$120 commission)</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>People searching for equipment reviews are ready to buy</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#10: Home Decor &mdash; Bookends, Coasters, Cheese Boards</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Polish thick stone slabs into functional home decor items</td></tr>
-      <tr><td><strong>Products</strong></td><td>Agate bookends ($30&ndash;$80), stone coasters ($15&ndash;$40/set), agate cheese boards ($50&ndash;$150)</td></tr>
-      <tr><td><strong>Channels</strong></td><td>Etsy, craft fairs, home decor boutiques</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>Uses slab saw offcuts that would otherwise be waste</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#11: Digital Products</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Downloadable stone identification guides, lapidary starter guides, NC mining maps</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$5&ndash;$20 per download</td></tr>
-      <tr><td><strong>Platform</strong></td><td>Etsy Digital Downloads, Gumroad, own website</td></tr>
-      <tr><td><strong>Effort</strong></td><td>Create once, sell forever &mdash; true passive income</td></tr>
-    </tbody>
-  </table>
-
-  <h3>#12: Pet Memorial Stones</h3>
-  <table>
-    <thead><tr><th>Detail</th><th>Info</th></tr></thead>
-    <tbody>
-      <tr><td><strong>What</strong></td><td>Polished stones engraved or painted with pet names for garden memorials</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>$25&ndash;$75 per stone</td></tr>
-      <tr><td><strong>Market</strong></td><td>Pet owners, veterinary offices, pet cremation services</td></tr>
-      <tr><td><strong>Why It Works</strong></td><td>High emotional value = premium pricing, referral-driven</td></tr>
-    </tbody>
-  </table>
-
-  <h2>5.3 Adjacent Revenue Summary &mdash; Stacking the Streams</h2>
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Key Insight
-    </div>
-    <div class="callout-body">
-      <p>Donald doesn't need to pick one. These streams <strong>stack.</strong> A single stone can generate revenue 3&ndash;4 times as it moves through the pipeline:</p>
-      <ol>
-        <li><strong>Film the cutting process</strong> &rarr; YouTube ad revenue + affiliate links</li>
-        <li><strong>Cut the stone</strong> &rarr; Sell the cabochon, OR...</li>
-        <li><strong>Wire-wrap it</strong> &rarr; 5&ndash;15x the value of the loose stone</li>
-        <li><strong>Consign in a shop</strong> &rarr; Zero-effort retail placement</li>
-        <li><strong>Feature in a subscription box</strong> &rarr; Recurring monthly revenue</li>
-        <li><strong>Offcuts become bookends</strong> &rarr; Even waste generates income</li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Value Pipeline CSS Diagram -->
-  <div class="diagram-container">
-    <div class="diagram-title">Value Pipeline &mdash; From Raw Stone to Revenue</div>
-    <div class="tree-diagram">
-      <div class="tree-root">Raw Rough Stone</div>
-      <div class="tree-branches" style="gap:1rem;">
-        <div class="tree-branch">
-          <div class="flow-node flow-node--red">Film Cutting Process</div>
-          <div class="tree-leaf">YouTube Revenue</div>
-          <div class="tree-leaf">Affiliate Links</div>
-        </div>
-        <div class="tree-branch">
-          <div class="flow-node flow-node--blue">Cut &amp; Polish</div>
-          <div class="tree-leaf">Loose Stone $15&ndash;$25</div>
-          <div class="tree-leaf">Wire-Wrap $65&ndash;$150</div>
-          <div class="tree-leaf">Subscription Box $30&ndash;$50</div>
-          <div class="tree-leaf">Wedding Favors $3&ndash;$8 x100+</div>
-        </div>
-        <div class="tree-branch">
-          <div class="flow-node flow-node--green">Slab Offcuts</div>
-          <div class="tree-leaf">Bookends / Coasters $30&ndash;$80</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 6: EQUIPMENT & INFRASTRUCTURE
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec6">
-  <h1><span class="section-num">6</span> Equipment &amp; Infrastructure</h1>
-
-  <h2>Phase 1 Equipment Budget (~$5,000)</h2>
-
-  <div class="callout callout-tip">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1a3 3 0 00-3 3v1H4a1 1 0 00-1 1v1.5a5.006 5.006 0 004 4.9V14H5v1h6v-1H9v-1.6a5.006 5.006 0 004-4.9V6a1 1 0 00-1-1h-1V4a3 3 0 00-3-3z"/></svg></span>
-      Smart Start Strategy
-    </div>
-    <div class="callout-body">
-      <p>Mix new essentials with quality used equipment. Join the Greensboro Gem &amp; Mineral Club for access to equipment while building skills.</p>
-    </div>
-  </div>
-
-  <h3>Essential Equipment (Priority Order)</h3>
-  <table>
-    <thead><tr><th>#</th><th>Equipment</th><th>New Price</th><th>Used/Budget</th><th>Recommended</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td><strong>Trim Saw</strong> (6"&ndash;8")</td><td>$400&ndash;$700</td><td>$200&ndash;$350</td><td>Used Highland Park or Lortone</td></tr>
-      <tr><td>2</td><td><strong>Cabochon Machine</strong> (combination unit)</td><td>$500&ndash;$1,500</td><td>$300&ndash;$700</td><td>Ameritool or used Covington</td></tr>
-      <tr><td>3</td><td><strong>Rock Tumbler</strong> (rotary, 12lb)</td><td>$80&ndash;$200</td><td>$40&ndash;$100</td><td>Lortone 33B or 45C</td></tr>
-      <tr><td>4</td><td><strong>Flat Lap Machine</strong></td><td>$300&ndash;$800</td><td>$150&ndash;$400</td><td>Used for flat surfaces &amp; preforms</td></tr>
-      <tr><td>5</td><td><strong>Diamond Blades</strong> (trim + slab)</td><td>$50&ndash;$200</td><td>N/A (buy new)</td><td>MK Diamond or Felker</td></tr>
-      <tr><td>6</td><td><strong>Grinding/Polishing Supplies</strong></td><td>$200&ndash;$400</td><td>N/A</td><td>Silicon carbide grit set, cerium oxide, diamond paste</td></tr>
-      <tr><td>7</td><td><strong>Dop Sticks &amp; Wax</strong></td><td>$30&ndash;$60</td><td>N/A</td><td>Essential for holding stones</td></tr>
-      <tr><td>8</td><td><strong>Safety Equipment</strong></td><td>$75&ndash;$150</td><td>N/A</td><td>Safety glasses, respirator, ear protection, apron</td></tr>
-      <tr><td>9</td><td><strong>Workbench &amp; Storage</strong></td><td>$100&ndash;$300</td><td>$50&ndash;$150</td><td>Sturdy, waterproof surface</td></tr>
-      <tr><td>10</td><td><strong>Initial Rough Material</strong></td><td>$300&ndash;$500</td><td>N/A</td><td>Mixed agate/jasper + NC rough</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Phase 1 Budget Summary</h3>
-  <table>
-    <thead><tr><th>Category</th><th>Budget Estimate</th></tr></thead>
-    <tbody>
-      <tr><td>Core Equipment (Saw + Cab Machine + Tumbler)</td><td>$1,500&ndash;$2,500</td></tr>
-      <tr><td>Flat Lap Machine</td><td>$300&ndash;$500</td></tr>
-      <tr><td>Blades, Abrasives, Consumables</td><td>$300&ndash;$600</td></tr>
-      <tr><td>Safety &amp; Workshop Setup</td><td>$200&ndash;$400</td></tr>
-      <tr><td>Initial Rough Material Inventory</td><td>$300&ndash;$500</td></tr>
-      <tr><td>Misc (dop supplies, lighting, storage)</td><td>$200&ndash;$400</td></tr>
-      <tr class="total-row"><td><strong>TOTAL Phase 1</strong></td><td><strong>$2,800&ndash;$4,900</strong></td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-tip">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1a3 3 0 00-3 3v1H4a1 1 0 00-1 1v1.5a5.006 5.006 0 004 4.9V14H5v1h6v-1H9v-1.6a5.006 5.006 0 004-4.9V6a1 1 0 00-1-1h-1V4a3 3 0 00-3-3z"/></svg></span>
-      Pro Tip
-    </div>
-    <div class="callout-body">
-      <p>The $5,000 budget can cover a solid Phase 1 setup if Donald targets the used market for the trim saw and cabochon machine. American-made equipment from Highland Park, Covington, and Lortone holds its value and lasts decades. Check estate sales, club bulletin boards, and Facebook Marketplace.</p>
-    </div>
-  </div>
-
-  <h2>Phase 2 Equipment Upgrades ($3,000&ndash;$5,000)</h2>
-  <table>
-    <thead><tr><th>Equipment</th><th>Price Range</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Slab Saw</strong> (10"&ndash;14")</td><td>$800&ndash;$2,500</td><td>Cut large rough into slabs</td></tr>
-      <tr><td><strong>Faceting Machine</strong> (entry-level)</td><td>$600&ndash;$1,500</td><td>Precision-cut gemstones for higher margins</td></tr>
-      <tr><td><strong>Vibratory Tumbler</strong></td><td>$100&ndash;$300</td><td>Faster finishing for tumbled stones</td></tr>
-      <tr><td><strong>Better Lighting</strong> (LED daylight)</td><td>$100&ndash;$300</td><td>Accurate color grading</td></tr>
-      <tr><td><strong>Photography Setup</strong></td><td>$200&ndash;$500</td><td>Product photos for online sales</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Phase 3 Professional Setup ($8,000&ndash;$15,000)</h2>
-  <table>
-    <thead><tr><th>Equipment</th><th>Price Range</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Large Slab Saw</strong> (18"&ndash;24")</td><td>$2,500&ndash;$6,500</td><td>Handle large rough from Vietnam</td></tr>
-      <tr><td><strong>Pro Faceting Machine</strong> (Ultra-Tec, Facetron)</td><td>$2,000&ndash;$5,000</td><td>Competition-grade cuts</td></tr>
-      <tr><td><strong>GIA-Standard Lighting</strong></td><td>$300&ndash;$800</td><td>Professional grading environment</td></tr>
-      <tr><td><strong>Gem Testing Equipment</strong></td><td>$200&ndash;$500</td><td>Verify stone identification</td></tr>
-      <tr><td><strong>Inventory Management System</strong></td><td>$0&ndash;$200</td><td>Track rough to finished stone pipeline</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Recommended Equipment Vendors</h2>
-  <table>
-    <thead><tr><th>Vendor</th><th>Specialty</th><th>Website</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Highland Park Lapidary</strong></td><td>Premium saws &amp; equipment</td><td>hplapidary.com</td></tr>
-      <tr><td><strong>Covington Engineering</strong></td><td>Full line (owns Ameritool)</td><td>covington-engineering.com</td></tr>
-      <tr><td><strong>Kingsley North</strong></td><td>Equipment, supplies, rough</td><td>kingsleynorth.com</td></tr>
-      <tr><td><strong>Lortone</strong></td><td>Tumblers, trim saws</td><td>lortone.com</td></tr>
-      <tr><td><strong>The Rock Peddler</strong></td><td>Equipment, blades, supplies</td><td>rockpeddler.com</td></tr>
-      <tr><td><strong>Rio Grande</strong></td><td>Jewelry making supplies</td><td>riogrande.com</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 7: NC GEM RESOURCES
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec7">
-  <h1><span class="section-num">7</span> North Carolina Gem Resources &amp; Sourcing</h1>
-
-  <h2>7.1 NC &mdash; "The Gem State"</h2>
-  <p>North Carolina is one of the most mineralogically diverse states in the U.S. and is home to world-class gemstone deposits.</p>
-
-  <img src="assets/images/nc-mountains.png" alt="North Carolina mountain gemstone regions" class="section-image">
-
-  <h3>Native Gemstones of North Carolina</h3>
-  <table>
-    <thead><tr><th>Gemstone</th><th>Location</th><th>Quality / Notes</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Ruby</strong> (Corundum)</td><td>Cowee Valley, Macon County</td><td>Pink to deep red, some gem-quality</td></tr>
-      <tr><td><strong>Sapphire</strong> (Corundum)</td><td>Cowee Valley, Macon County</td><td>Blue, pink, white, yellow varieties</td></tr>
-      <tr><td><strong>Emerald</strong> (Beryl)</td><td>Hiddenite, Alexander County</td><td>NC is the only significant U.S. source</td></tr>
-      <tr><td><strong>Aquamarine</strong> (Beryl)</td><td>Spruce Pine, Mitchell County</td><td>Blue-green, collectible</td></tr>
-      <tr><td><strong>Rhodolite Garnet</strong></td><td>Cowee Valley</td><td>Raspberry-pink, jewelry-grade</td></tr>
-      <tr><td><strong>Smoky Quartz</strong></td><td>Various locations</td><td>Abundant, good for tumbling/cabochons</td></tr>
-      <tr><td><strong>Moonstone</strong></td><td>Cowee Valley</td><td>Feldspar, good for cabochons</td></tr>
-      <tr><td><strong>Staurolite</strong> (Fairy Crosses)</td><td>Various Piedmont locations</td><td>Novelty/collector items</td></tr>
-      <tr><td><strong>Unakite</strong></td><td>Blue Ridge Mountains</td><td>Green/pink, popular for cabochons</td></tr>
-    </tbody>
-  </table>
-
-  <h2>7.2 Sourcing Strategy &mdash; Phase 1 (NC-Based)</h2>
-  <div class="diagram-container">
-    <div class="diagram-title">NC Sourcing Pipeline</div>
-    <div class="flow-diagram" style="flex-direction:column;gap:0.6rem;">
-      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
-        <div class="flow-node flow-node--dark">NC Fee-Dig Mines</div>
-        <div class="flow-node flow-node--dark">Gem Shows</div>
-        <div class="flow-node flow-node--dark">Wholesale Dealers</div>
-      </div>
-      <div class="flow-arrow-down" style="font-size:1.4rem;">&#8595;</div>
-      <div class="flow-node flow-node--blue" style="display:inline-block;">Raw Rough</div>
-      <div class="flow-arrow-down" style="font-size:1.4rem;">&#8595;</div>
-      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
-        <div class="flow-node flow-node--green">Cabochons</div>
-        <div class="flow-node flow-node--green">Faceted Stones</div>
-        <div class="flow-node flow-node--green">Tumbled Lots</div>
-      </div>
-      <div class="flow-arrow-down" style="font-size:1.4rem;">&#8595;</div>
-      <div class="flow-node flow-node--purple" style="display:inline-block;">Gem Shows / Online / Wholesale</div>
-    </div>
-  </div>
-
-  <h3>Primary NC Sourcing Channels</h3>
-  <table>
-    <thead><tr><th>Source</th><th>Distance from GSO</th><th>Material</th><th>Cost</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Cowee Valley Mines</strong> (Franklin)</td><td>~3.5 hrs</td><td>Ruby, sapphire, garnet</td><td>$20&ndash;$100/bucket</td></tr>
-      <tr><td><strong>Hiddenite Gem Mines</strong></td><td>~1.5 hrs</td><td>Emerald, sapphire, topaz</td><td>$25&ndash;$75/bucket</td></tr>
-      <tr><td><strong>Spruce Pine Area</strong></td><td>~2.5 hrs</td><td>Aquamarine, feldspar, mica</td><td>Varies</td></tr>
-      <tr><td><strong>NC Gem Shows</strong> (Franklin, Charlotte, Raleigh)</td><td>Varies</td><td>All types, rough &amp; cut</td><td>Wholesale pricing</td></tr>
-      <tr><td><strong>Online Wholesalers</strong> (Kingsley North, etc.)</td><td>N/A</td><td>Mixed rough by the pound</td><td>$3&ndash;$30/lb</td></tr>
-    </tbody>
-  </table>
-
-  <h2>7.3 Key Gem Shows in the Region</h2>
-  <table>
-    <thead><tr><th>Show</th><th>Location</th><th>Timing</th><th>Focus</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Macon County Gemboree</strong></td><td>Franklin, NC</td><td>July</td><td>NC gems, minerals, lapidary</td></tr>
-      <tr><td><strong>GLW Wholesale Shows</strong></td><td>Franklin, NC</td><td>May &amp; July</td><td>Wholesale rough &amp; cut</td></tr>
-      <tr><td><strong>Charlotte Gem Show</strong></td><td>Charlotte, NC</td><td>Various</td><td>Regional gem &amp; mineral</td></tr>
-      <tr><td><strong>Raleigh Gem &amp; Mineral Show</strong></td><td>Raleigh, NC</td><td>Fall</td><td>Education + sales</td></tr>
-      <tr><td><strong>Southeastern Federation Shows</strong></td><td>Rotates (SE states)</td><td>Annual</td><td>Competition, education</td></tr>
-      <tr><td><strong>Tucson Gem Show</strong> (aspirational)</td><td>Tucson, AZ</td><td>Feb</td><td>World's largest &mdash; sourcing trip</td></tr>
-    </tbody>
-  </table>
-
-  <h2>7.4 Local Organizations</h2>
-  <table>
-    <thead><tr><th>Organization</th><th>Value</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Greensboro Gem &amp; Mineral Club</strong></td><td>Equipment access, mentorship, field trips</td></tr>
-      <tr><td><strong>Tar Heel Gem &amp; Mineral Club</strong> (various NC chapters)</td><td>Shows, education, networking</td></tr>
-      <tr><td><strong>Southeast Federation of Mineralogical Societies (SFMS)</strong></td><td>Regional competitions, certification</td></tr>
-      <tr><td><strong>American Federation of Mineralogical Societies (AFMS)</strong></td><td>National network, insurance, education</td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Immediate Action
-    </div>
-    <div class="callout-body">
-      <p>Donald should join the <strong>Greensboro Gem &amp; Mineral Club</strong> ASAP. Membership provides access to expensive equipment (slab saws, faceting machines) while he builds skills, plus a network of mentors and potential customers.</p>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 8: VIETNAM SOURCING STRATEGY
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec8">
-  <h1><span class="section-num">8</span> Vietnam Sourcing Strategy (Phase 3)</h1>
-
-  <h2>8.1 Why Vietnam?</h2>
-  <p>Vietnam is a world-class source for premium gemstones, particularly from the <strong>Luc Yen</strong> and <strong>Quy Chau</strong> mining districts. Direct sourcing eliminates multiple middlemen and can reduce rough material costs by <strong>40&ndash;60%</strong> compared to U.S. wholesale prices.</p>
-
-  <h3>Vietnamese Gemstones</h3>
-  <table>
-    <thead><tr><th>Gemstone</th><th>Region</th><th>Quality</th><th>Market Value</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Ruby</strong></td><td>Luc Yen, Yen Bai Province</td><td>World-class, vivid red</td><td>High</td></tr>
-      <tr><td><strong>Sapphire</strong></td><td>Luc Yen; Dak Nong Province</td><td>Blue, pink, yellow</td><td>High</td></tr>
-      <tr><td><strong>Spinel</strong></td><td>Luc Yen</td><td>Vibrant red, pink, cobalt blue &mdash; highly collectible</td><td>Very High</td></tr>
-      <tr><td><strong>Peridot</strong></td><td>Various</td><td>Green, jewelry-grade</td><td>Moderate</td></tr>
-      <tr><td><strong>Tourmaline</strong></td><td>Various</td><td>Multi-color</td><td>Moderate&ndash;High</td></tr>
-      <tr><td><strong>Aquamarine</strong></td><td>Various</td><td>Blue-green beryl</td><td>Moderate</td></tr>
-    </tbody>
-  </table>
-
-  <h2>8.2 Luc Yen Gem Market</h2>
-  <p>The <strong>Luc Yen gem market</strong> in Yen Bai Province is a professional, early-morning trading hub:</p>
-  <ul>
-    <li><strong>Hours:</strong> 6:30 AM &ndash; Late Morning</li>
-    <li><strong>Sellers:</strong> Local miners and established traders</li>
-    <li><strong>Products:</strong> Rough and cut ruby, sapphire, spinel</li>
-    <li><strong>Culture:</strong> Professional but informal; trust-based relationships are critical</li>
-    <li><strong>Key Success Factor:</strong> A reliable local contact/fixer who knows the miners and can verify quality</li>
-  </ul>
-
-  <h2>8.3 Import Logistics &amp; Regulations</h2>
-  <div class="callout callout-warning">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 0L0 14h16L8 0zm-.75 5.5h1.5v4h-1.5v-4zm0 5.5h1.5v1.5h-1.5V11z"/></svg></span>
-      Trade Advisory
-    </div>
-    <div class="callout-body">
-      <p><strong>Trade regulations are fluid as of 2026.</strong> Always consult a licensed U.S. customs broker before importing. The information below is a general guide.</p>
-    </div>
-  </div>
-
-  <h3>U.S. Import Requirements</h3>
-  <table>
-    <thead><tr><th>Requirement</th><th>Detail</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Formal Customs Entry</strong></td><td>Required for shipments valued &ge; $2,500</td></tr>
-      <tr><td><strong>Customs Bond</strong></td><td>CBP Form 301 required for formal entries</td></tr>
-      <tr><td><strong>HTS Classification</strong></td><td>Chapter 71 &mdash; Precious/semi-precious stones</td></tr>
-      <tr><td><strong>Documentation</strong></td><td>Commercial Invoice, Packing List, Bill of Lading/Air Waybill</td></tr>
-      <tr><td><strong>Country of Origin</strong></td><td>Must document origin for tariff classification</td></tr>
-      <tr><td><strong>Current Tariff</strong></td><td>~10% global tariff (temporary, subject to change)</td></tr>
-      <tr><td><strong>Historical Status</strong></td><td>Loose, unmounted precious stones historically duty-free</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Import Checklist</h3>
-  <ul class="checklist">
-    <li><span class="checklist-box"></span> Register as an importer with U.S. Customs &amp; Border Protection (CBP)</li>
-    <li><span class="checklist-box"></span> Obtain an Importer of Record number</li>
-    <li><span class="checklist-box"></span> Establish relationship with a licensed customs broker</li>
-    <li><span class="checklist-box"></span> Research current HTS codes for specific stone types</li>
-    <li><span class="checklist-box"></span> Set up documentation templates (commercial invoices)</li>
-    <li><span class="checklist-box"></span> Open a customs bond if shipping &gt; $2,500 per shipment</li>
-    <li><span class="checklist-box"></span> Verify current tariff rates (check AGTA and CBP updates)</li>
-  </ul>
-
-  <h2>8.4 Vietnam Trip Budget (Estimated)</h2>
-  <table>
-    <thead><tr><th>Expense</th><th>Estimated Cost</th></tr></thead>
-    <tbody>
-      <tr><td>Round-trip airfare (GSO &rarr; Hanoi)</td><td>$1,200&ndash;$1,800</td></tr>
-      <tr><td>Internal travel (Hanoi &rarr; Luc Yen, ~5hrs)</td><td>$50&ndash;$150</td></tr>
-      <tr><td>Lodging (7&ndash;10 days)</td><td>$300&ndash;$700</td></tr>
-      <tr><td>Meals &amp; Incidentals</td><td>$200&ndash;$400</td></tr>
-      <tr><td>Local Guide/Fixer</td><td>$200&ndash;$500</td></tr>
-      <tr><td>Rough Material Purchases</td><td>$3,000&ndash;$10,000</td></tr>
-      <tr><td>Shipping/Customs (if not hand-carrying)</td><td>$200&ndash;$500</td></tr>
-      <tr class="total-row"><td><strong>TOTAL per trip</strong></td><td><strong>$5,150&ndash;$14,050</strong></td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-tip">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1a3 3 0 00-3 3v1H4a1 1 0 00-1 1v1.5a5.006 5.006 0 004 4.9V14H5v1h6v-1H9v-1.6a5.006 5.006 0 004-4.9V6a1 1 0 00-1-1h-1V4a3 3 0 00-3-3z"/></svg></span>
-      First Trip Strategy
-    </div>
-    <div class="callout-body">
-      <p>Start with a modest $3,000&ndash;$5,000 rough purchase budget. Focus on building relationships with 2&ndash;3 reliable sellers. Hand-carry stones in carry-on luggage (declare to customs). Save shipping for subsequent larger orders.</p>
-    </div>
-  </div>
-
-  <h2>8.5 Key Contacts &amp; Resources</h2>
-  <table>
-    <thead><tr><th>Resource</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td><strong>American Gem Trade Association (AGTA)</strong></td><td>Trade regulations, ethical sourcing, networking</td></tr>
-      <tr><td><strong>Gemological Institute of America (GIA)</strong></td><td>Certification, grading standards, education</td></tr>
-      <tr><td><strong>Licensed Customs Broker</strong></td><td>Navigate import regulations</td></tr>
-      <tr><td><strong>Local Luc Yen Contact</strong></td><td>Essential for sourcing (develop through gem show networking)</td></tr>
-      <tr><td><strong>U.S. Embassy, Hanoi</strong></td><td>Business travel support</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 8A: DIGITAL PLATFORM & E-COMMERCE
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec8a">
-  <h1><span class="section-num">8A</span> Digital Platform &amp; E-Commerce Strategy</h1>
-
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Digital Revenue Hub
-    </div>
-    <div class="callout-body">
-      <p>The SLA website is not just a brochure &mdash; it's a <strong>full e-commerce platform</strong> that serves as the central hub for all revenue streams. Built by Think! Design and Planning, LLC.</p>
-    </div>
-  </div>
-
-  <h2>8A.1 Website Architecture</h2>
-  <table>
-    <thead><tr><th>Component</th><th>Technology</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Frontend</strong></td><td>Vanilla HTML/CSS/JS (modular)</td><td>Premium dark theme, responsive, fast</td></tr>
-      <tr><td><strong>E-Commerce</strong></td><td>Stripe Checkout Sessions API</td><td>Stone purchases, merch, workshop bookings</td></tr>
-      <tr><td><strong>Merch Store</strong></td><td>Printful (print-on-demand)</td><td>Branded apparel, mugs, accessories &mdash; zero inventory</td></tr>
-      <tr><td><strong>Multi-Language</strong></td><td>Custom i18n system (EN/ES/VI)</td><td>Reach Hispanic market + Vietnamese suppliers</td></tr>
-      <tr><td><strong>Video Hero</strong></td><td>Veo 2 AI-generated cinematic video</td><td>Premium first impression, stone-cutting footage</td></tr>
-      <tr><td><strong>Hosting</strong></td><td>Netlify (free tier)</td><td>Global CDN, automatic deploys, serverless functions</td></tr>
-      <tr><td><strong>Payments</strong></td><td>Stripe</td><td>Direct deposit to Donald's LLC bank account</td></tr>
-    </tbody>
-  </table>
-
-  <h2>8A.2 E-Commerce &mdash; Stone Shop</h2>
-  <p>Customers can browse, filter, and purchase stones directly from the website:</p>
-  <table>
-    <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Product Catalog</strong></td><td>Filterable by type (cabochon, faceted, rough, tumbled), stone, price</td></tr>
-      <tr><td><strong>Product Cards</strong></td><td>Photo, name, origin, weight, dimensions, price</td></tr>
-      <tr><td><strong>Shopping Cart</strong></td><td>Add/remove items, quantity controls, subtotal</td></tr>
-      <tr><td><strong>Checkout</strong></td><td>Stripe hosted checkout &mdash; PCI-compliant, credit card + Apple Pay</td></tr>
-      <tr><td><strong>Order Fulfillment</strong></td><td>Email notification to Donald, manual shipping</td></tr>
-      <tr><td><strong>Pricing</strong></td><td>Real-time updates &mdash; Donald edits a simple JS data file</td></tr>
-    </tbody>
-  </table>
-
-  <h2>8A.3 Merch Store (Printful &mdash; Zero Inventory)</h2>
-  <p>Print-on-demand merchandise &mdash; Printful handles printing, packaging, and shipping:</p>
-  <table>
-    <thead><tr><th>Product</th><th>Type</th><th>Retail Price</th><th>Donald's Profit</th></tr></thead>
-    <tbody>
-      <tr><td>SLA Classic Tee</td><td>Bella+Canvas 3001</td><td>$35.00</td><td>~$15&ndash;$18</td></tr>
-      <tr><td>Lapidary Hoodie</td><td>Gildan 18500</td><td>$55.00</td><td>~$20&ndash;$25</td></tr>
-      <tr><td>Gem Cutter Mug</td><td>11oz White</td><td>$22.00</td><td>~$10&ndash;$12</td></tr>
-      <tr><td>SLA Dad Hat</td><td>Yupoong 6245CM</td><td>$28.00</td><td>~$10&ndash;$13</td></tr>
-      <tr><td>Rock Show Tote</td><td>Canvas</td><td>$25.00</td><td>~$12&ndash;$15</td></tr>
-    </tbody>
-  </table>
-  <blockquote>
-    <p><strong>No inventory, no upfront cost, no shipping hassle.</strong> Printful prints and ships on demand. Donald earns the markup automatically.</p>
-  </blockquote>
-
-  <h2>8A.4 Trilingual Support (EN/ES/VI)</h2>
-  <table>
-    <thead><tr><th>Language</th><th>Market</th><th>Strategic Purpose</th></tr></thead>
-    <tbody>
-      <tr><td><strong>English</strong></td><td>Primary U.S. market</td><td>Core business operations</td></tr>
-      <tr><td><strong>Espa&ntilde;ol</strong></td><td>Hispanic customers in NC/Southeast</td><td>Growing demographic, gem show buyers</td></tr>
-      <tr><td><strong>Ti&#7871;ng Vi&#7879;t</strong></td><td>Vietnamese suppliers &amp; partners</td><td>Build trust with Luc Yen suppliers, show respect for business partners</td></tr>
-    </tbody>
-  </table>
-  <p>All UI text switches instantly via a language selector in the navigation. Product descriptions and stone data remain in English.</p>
-
-  <h2>8A.5 Video &amp; Content Marketing Pipeline</h2>
-  <table>
-    <thead><tr><th>Content Type</th><th>Tool</th><th>Purpose</th><th>Frequency</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Hero Landing Video</strong></td><td>Veo 2 (AI)</td><td>Cinematic stone-cutting footage for website</td><td>Once, update quarterly</td></tr>
-      <tr><td><strong>Process Videos</strong></td><td>Phone camera</td><td>"What's inside this ugly rock?" reveals</td><td>2&ndash;3x/week</td></tr>
-      <tr><td><strong>Workshop Promos</strong></td><td>Phone camera</td><td>Show workshops in action, student testimonials</td><td>Monthly</td></tr>
-      <tr><td><strong>Stone Spotlights</strong></td><td>Phone + tripod</td><td>Individual stone beauty shots for shop listings</td><td>Per product</td></tr>
-      <tr><td><strong>NC Mining Adventures</strong></td><td>Phone camera</td><td>Trip content from Franklin, Hiddenite mines</td><td>Per trip</td></tr>
-    </tbody>
-  </table>
-
-  <h2>8A.6 Stripe Setup for Donald</h2>
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Donald's Action Items to Activate Payments
-    </div>
-    <div class="callout-body">
-      <table style="margin:0;">
-        <thead><tr><th>Step</th><th>Action</th><th>Time</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>Create a Stripe account at <strong>stripe.com</strong></td><td>10 min</td></tr>
-          <tr><td>2</td><td>Verify business identity (LLC name, EIN, address)</td><td>10 min</td></tr>
-          <tr><td>3</td><td>Connect the LLC's bank account for deposits</td><td>5 min</td></tr>
-          <tr><td>4</td><td>Copy API keys (Publishable + Secret)</td><td>2 min</td></tr>
-          <tr><td>5</td><td>Add keys as Netlify environment variables</td><td>5 min</td></tr>
-          <tr><td>6</td><td>Checkout goes live automatically &mdash; money flows to his bank</td><td>Instant</td></tr>
-        </tbody>
-      </table>
-      <p style="margin-top:0.5rem;">Stripe charges <strong>2.9% + $0.30 per transaction</strong>. Funds deposit to Donald's bank account in 2 business days.</p>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 9: MARKETING & SALES STRATEGY
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec9">
-  <h1><span class="section-num">9</span> Marketing &amp; Sales Strategy</h1>
-
-  <h2>9.1 Brand Positioning</h2>
-  <p><strong>"Southeastern Lapidary Associates &mdash; From Earth to Art, Stone by Stone"</strong></p>
-  <p>Position SLA as a premium-but-accessible lapidary service specializing in:</p>
-  <ul>
-    <li>NC-native gemstones with provenance stories</li>
-    <li>Custom cutting for independent jewelers</li>
-    <li>Direct-sourced Vietnamese rubies and spinels (Phase 3)</li>
-  </ul>
-
-  <h2>9.2 Sales Channels</h2>
-  <div class="diagram-container">
-    <div class="diagram-title">Multi-Channel Sales Architecture</div>
-    <div class="tree-diagram">
-      <div class="tree-root">Sales Channels</div>
-      <div class="tree-branches" style="gap:1rem;">
-        <div class="tree-branch">
-          <div class="tree-node">In-Person</div>
-          <div class="tree-leaf">Gem &amp; Mineral Shows</div>
-          <div class="tree-leaf">Craft Fairs</div>
-          <div class="tree-leaf">Studio/Workshop Sales</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Online</div>
-          <div class="tree-leaf">Etsy Store</div>
-          <div class="tree-leaf">eBay</div>
-          <div class="tree-leaf">Instagram/Facebook</div>
-          <div class="tree-leaf">Own Website</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Wholesale</div>
-          <div class="tree-leaf">Local Jewelers</div>
-          <div class="tree-leaf">Metaphysical Shops</div>
-          <div class="tree-leaf">Gift Shops</div>
-        </div>
-        <div class="tree-branch">
-          <div class="tree-node">Services</div>
-          <div class="tree-leaf">Custom Cutting</div>
-          <div class="tree-leaf">Workshops</div>
-          <div class="tree-leaf">Stone ID/Appraisal</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2>9.3 Marketing Tactics</h2>
-  <table>
-    <thead><tr><th>Channel</th><th>Strategy</th><th>Budget</th></tr></thead>
-    <tbody>
-      <tr><td><strong>SLA Website (E-Commerce)</strong></td><td>Full stone shop, merch store, workshop booking, trilingual</td><td>$0 (self-built)</td></tr>
-      <tr><td><strong>Instagram</strong></td><td>Process videos (cutting, polishing), before/after, Reels</td><td>Free</td></tr>
-      <tr><td><strong>Facebook</strong></td><td>Local community groups, marketplace listings</td><td>Free&ndash;$50/mo</td></tr>
-      <tr><td><strong>YouTube/TikTok</strong></td><td>Satisfying stone-cutting videos (high viral potential)</td><td>Free</td></tr>
-      <tr><td><strong>Etsy</strong></td><td>Professional product listings with NC provenance story</td><td>$0.20/listing + 6.5% commission</td></tr>
-      <tr><td><strong>eBay</strong></td><td>Auction-style for rare/unique pieces</td><td>~13% commission</td></tr>
-      <tr><td><strong>Email Newsletter</strong></td><td>New stone alerts, workshop announcements, gem show schedule</td><td>Free (Mailchimp)</td></tr>
-      <tr><td><strong>Gem Shows</strong></td><td>Vendor tables, networking, direct sales</td><td>$50&ndash;$200/table</td></tr>
-      <tr><td><strong>Google Business Profile</strong></td><td>Local SEO, reviews, workshop listings</td><td>Free</td></tr>
-      <tr><td><strong>Business Cards + QR Code</strong></td><td>Cards linking to website at shows and networking</td><td>$30&ndash;$50</td></tr>
-    </tbody>
-  </table>
-
-  <h2>9.4 Pricing Strategy</h2>
-  <table>
-    <thead><tr><th>Approach</th><th>Description</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Cost-Plus</strong></td><td>Calculate material + labor + overhead + 40&ndash;60% margin</td></tr>
-      <tr><td><strong>Market-Based</strong></td><td>Research comparable sellers on Etsy/eBay for competitive pricing</td></tr>
-      <tr><td><strong>Value-Based</strong></td><td>Premium pricing for NC-provenance, custom, or rare stones</td></tr>
-      <tr><td><strong>Wholesale</strong></td><td>50% off retail for volume B2B accounts</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Job Costing Formula</h3>
-  <div class="formula-box">
-Stone Cost = (Rough Material Cost / Expected Yield) + (Machine Time x Hourly Rate) +
-             (Blade/Consumable Wear per Stone) + Overhead Allocation
-
-Retail Price    = Stone Cost x 2.5&ndash;4.0 (markup)
-Wholesale Price = Stone Cost x 1.5&ndash;2.0 (markup)
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 10: OPERATIONS PLAN
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec10">
-  <h1><span class="section-num">10</span> Operations Plan</h1>
-
-  <h2>10.1 Workshop Setup</h2>
-
-  <h3>Space Requirements</h3>
-  <table>
-    <thead><tr><th>Option</th><th>Sq Ft</th><th>Monthly Cost</th><th>Pros</th><th>Cons</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Home Garage/Workshop</strong></td><td>200&ndash;400</td><td>$0</td><td>No rent, convenient</td><td>Noise, water management, zoning</td></tr>
-      <tr><td><strong>Shared Maker Space</strong></td><td>100&ndash;200</td><td>$100&ndash;$300</td><td>Community, shared tools</td><td>Limited hours, shared equipment</td></tr>
-      <tr><td><strong>Dedicated Workshop</strong></td><td>400&ndash;800</td><td>$400&ndash;$800</td><td>Professional, room to grow</td><td>Highest fixed cost</td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-tip">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1a3 3 0 00-3 3v1H4a1 1 0 00-1 1v1.5a5.006 5.006 0 004 4.9V14H5v1h6v-1H9v-1.6a5.006 5.006 0 004-4.9V6a1 1 0 00-1-1h-1V4a3 3 0 00-3-3z"/></svg></span>
-      Recommendation
-    </div>
-    <div class="callout-body">
-      <p>Start in a home garage or dedicated outbuilding. Lapidary equipment needs water supply, drainage, and adequate ventilation. A 10x20 space is sufficient for Phase 1.</p>
-    </div>
-  </div>
-
-  <h3>Workshop Infrastructure</h3>
-  <table>
-    <thead><tr><th>Need</th><th>Detail</th><th>Est. Cost</th></tr></thead>
-    <tbody>
-      <tr><td>Water Supply</td><td>Continuous flow for cooling saws/grinders</td><td>$50&ndash;$200</td></tr>
-      <tr><td>Drainage</td><td>Manage slurry runoff (settling tank recommended)</td><td>$50&ndash;$150</td></tr>
-      <tr><td>Electrical</td><td>20A dedicated circuits (most equipment is 110V)</td><td>$100&ndash;$300</td></tr>
-      <tr><td>Ventilation</td><td>Dust management (silica dust is hazardous)</td><td>$50&ndash;$200</td></tr>
-      <tr><td>Lighting</td><td>LED daylight-balanced for accurate stone grading</td><td>$50&ndash;$150</td></tr>
-      <tr><td>Flooring</td><td>Waterproof, easy-clean surface</td><td>$100&ndash;$300</td></tr>
-    </tbody>
-  </table>
-
-  <h2>10.2 Daily Operations</h2>
-  <table>
-    <thead><tr><th>Activity</th><th>Time Allocation</th></tr></thead>
-    <tbody>
-      <tr><td>Stone Cutting &amp; Polishing</td><td>4&ndash;6 hours</td></tr>
-      <tr><td>Inventory &amp; Stone Evaluation</td><td>1 hour</td></tr>
-      <tr><td>Online Store Management</td><td>1 hour</td></tr>
-      <tr><td>Marketing &amp; Social Media</td><td>30 min</td></tr>
-      <tr><td>Customer Communications</td><td>30 min</td></tr>
-      <tr><td>Admin (bookkeeping, orders)</td><td>30 min</td></tr>
-    </tbody>
-  </table>
-
-  <h2>10.3 Quality Control</h2>
-  <table>
-    <thead><tr><th>Standard</th><th>Description</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Symmetry</strong></td><td>All cabochons checked for even dome height and symmetry</td></tr>
-      <tr><td><strong>Polish</strong></td><td>Mirror-finish standard; no scratches visible at 10x</td></tr>
-      <tr><td><strong>Documentation</strong></td><td>Every stone photographed with specs (dimensions, weight, material)</td></tr>
-      <tr><td><strong>Grading</strong></td><td>Adopt GIA-aligned descriptors for color, clarity, cut</td></tr>
-      <tr><td><strong>Packaging</strong></td><td>Professional gem jars/bags with identification cards</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 11: FINANCIAL PROJECTIONS
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec11">
-  <h1><span class="section-num">11</span> Financial Projections (3-Year)</h1>
-
-  <div class="callout callout-note">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 4h2v5H7V4zm0 6h2v2H7v-2z"/></svg></span>
-      Strategy
-    </div>
-    <div class="callout-body">
-      <p>Part-time Year 1 (20&ndash;25 hrs/wk alongside landscaping) &rarr; Full-time Year 2+ (40&ndash;50 hrs/wk). Adjacent revenue streams activate in Year 2 to maximize income with minimal additional effort.</p>
-    </div>
-  </div>
-
-  <h2>11.1 Startup &amp; Operating Costs</h2>
-  <table>
-    <thead><tr><th>Category</th><th>Year 1 (Part-Time)</th><th>Year 2 (Full-Time)</th><th>Year 3 (FT + Vietnam)</th></tr></thead>
-    <tbody>
-      <tr><td>Equipment</td><td>$4,500</td><td>$5,500</td><td>$12,000</td></tr>
-      <tr><td>Rough Material</td><td>$2,400</td><td>$14,000</td><td>$25,000</td></tr>
-      <tr><td>DBA Filing + Legal</td><td>$100</td><td>$0</td><td>$500</td></tr>
-      <tr><td>Insurance</td><td>$800</td><td>$2,500</td><td>$3,500</td></tr>
-      <tr><td>Marketing &amp; Photography</td><td>$600</td><td>$2,000</td><td>$3,000</td></tr>
-      <tr><td>Workshop/Utilities</td><td>$600</td><td>$6,000</td><td>$9,600</td></tr>
-      <tr><td>Gem Show Fees</td><td>$400</td><td>$2,000</td><td>$3,000</td></tr>
-      <tr><td>Subscription Box Supplies</td><td>$0</td><td>$3,600</td><td>$6,000</td></tr>
-      <tr><td>Vietnam Trip</td><td>$0</td><td>$0</td><td>$8,000</td></tr>
-      <tr><td>Misc/Contingency</td><td>$500</td><td>$1,500</td><td>$2,000</td></tr>
-      <tr class="total-row"><td><strong>TOTAL Expenses</strong></td><td><strong>$9,900</strong></td><td><strong>$37,100</strong></td><td><strong>$72,600</strong></td></tr>
-    </tbody>
-  </table>
-
-  <h2>11.2 Revenue Projections</h2>
-
-  <h3>Year 1 &mdash; Foundation (Part-Time: 20&ndash;25 hrs/wk)</h3>
-  <table>
-    <thead><tr><th>Revenue Stream</th><th>Monthly (Avg)</th><th>Annual</th><th>Effort</th></tr></thead>
-    <tbody>
-      <tr><td>Custom Cutting Services</td><td>$200</td><td>$2,400</td><td>Core</td></tr>
-      <tr><td>Finished Stone Sales (shows + online)</td><td>$300</td><td>$3,600</td><td>Core</td></tr>
-      <tr><td>Rough Stone Sales</td><td>$100</td><td>$1,200</td><td>Core</td></tr>
-      <tr><td>Workshops (quarterly)</td><td>$125</td><td>$1,500</td><td>Core</td></tr>
-      <tr><td>Tumbled Stone Lots (metaphysical shops)</td><td>$150</td><td>$1,800</td><td>Adjacent</td></tr>
-      <tr class="total-row"><td><strong>TOTAL Revenue</strong></td><td><strong>$875</strong></td><td><strong>$10,500</strong></td><td></td></tr>
-    </tbody>
-  </table>
-
-  <h3>Year 2 &mdash; Full-Time Transition (40&ndash;50 hrs/wk)</h3>
-  <table>
-    <thead><tr><th>Revenue Stream</th><th>Monthly (Avg)</th><th>Annual</th><th>Effort</th></tr></thead>
-    <tbody>
-      <tr><td>Custom Cutting Services</td><td>$1,800</td><td>$21,600</td><td>Core</td></tr>
-      <tr><td>Finished Stone + Wire-Wrap Jewelry</td><td>$2,500</td><td>$30,000</td><td>Core + Adjacent</td></tr>
-      <tr class="highlight-row"><td><strong>Website E-Commerce (Stone Shop)</strong></td><td><strong>$800</strong></td><td><strong>$9,600</strong></td><td><strong>Digital</strong></td></tr>
-      <tr class="highlight-row"><td><strong>Printful Merch Store</strong></td><td><strong>$400</strong></td><td><strong>$4,800</strong></td><td><strong>Digital</strong></td></tr>
-      <tr><td>Rough Stone Sales</td><td>$800</td><td>$9,600</td><td>Core</td></tr>
-      <tr><td>Workshops (2x/week)</td><td>$1,200</td><td>$14,400</td><td>Core</td></tr>
-      <tr><td>Wholesale to Jewelers</td><td>$1,200</td><td>$14,400</td><td>Core</td></tr>
-      <tr><td>Subscription Boxes (50 subscribers)</td><td>$500</td><td>$6,000</td><td>Adjacent</td></tr>
-      <tr><td>YouTube/TikTok Monetization</td><td>$300</td><td>$3,600</td><td>Adjacent</td></tr>
-      <tr><td>Landscape Stone Upsells (via LLC)</td><td>$600</td><td>$7,200</td><td>Adjacent</td></tr>
-      <tr><td>Consignment (3&ndash;5 local shops)</td><td>$400</td><td>$4,800</td><td>Adjacent</td></tr>
-      <tr class="total-row"><td><strong>TOTAL Revenue</strong></td><td><strong>$10,500</strong></td><td><strong>$126,000</strong></td><td></td></tr>
-    </tbody>
-  </table>
-
-  <h3>Year 3 &mdash; Vietnam Direct + Scale (Full-Time)</h3>
-  <table>
-    <thead><tr><th>Revenue Stream</th><th>Monthly (Avg)</th><th>Annual</th><th>Effort</th></tr></thead>
-    <tbody>
-      <tr><td>Custom Cutting Services</td><td>$2,500</td><td>$30,000</td><td>Core</td></tr>
-      <tr><td>Finished Stone + Jewelry Sales</td><td>$4,000</td><td>$48,000</td><td>Core + Adjacent</td></tr>
-      <tr class="highlight-row"><td><strong>Website E-Commerce (Stone Shop)</strong></td><td><strong>$2,000</strong></td><td><strong>$24,000</strong></td><td><strong>Digital</strong></td></tr>
-      <tr class="highlight-row"><td><strong>Printful Merch Store</strong></td><td><strong>$800</strong></td><td><strong>$9,600</strong></td><td><strong>Digital</strong></td></tr>
-      <tr><td>Rough Stone Sales (Vietnam sourced)</td><td>$2,000</td><td>$24,000</td><td>Core</td></tr>
-      <tr><td>Workshops + Private Lessons</td><td>$1,500</td><td>$18,000</td><td>Core</td></tr>
-      <tr><td>Wholesale to Jewelers</td><td>$2,500</td><td>$30,000</td><td>Core</td></tr>
-      <tr><td>Subscription Boxes (100 subscribers)</td><td>$1,000</td><td>$12,000</td><td>Adjacent</td></tr>
-      <tr><td>YouTube/TikTok + Affiliate</td><td>$800</td><td>$9,600</td><td>Adjacent</td></tr>
-      <tr><td>Landscape Stone Upsells (via LLC)</td><td>$1,000</td><td>$12,000</td><td>Adjacent</td></tr>
-      <tr><td>Consignment (8&ndash;10 shops)</td><td>$700</td><td>$8,400</td><td>Adjacent</td></tr>
-      <tr><td>Wedding/Event Favors</td><td>$500</td><td>$6,000</td><td>Adjacent</td></tr>
-      <tr class="total-row"><td><strong>TOTAL Revenue</strong></td><td><strong>$19,300</strong></td><td><strong>$231,600</strong></td><td></td></tr>
-    </tbody>
-  </table>
-
-  <h2>11.3 Profit &amp; Loss Summary</h2>
-  <table>
-    <thead><tr><th>Metric</th><th>Year 1 (Part-Time)</th><th>Year 2 (Full-Time)</th><th>Year 3 (FT + Vietnam)</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Revenue</strong></td><td>$10,500</td><td>$126,000</td><td>$231,600</td></tr>
-      <tr><td><strong>Total Expenses</strong></td><td>$9,900</td><td>$38,600</td><td>$74,600</td></tr>
-      <tr class="total-row"><td><strong>Net Profit (Loss)</strong></td><td><strong>$600</strong></td><td><strong>$87,400</strong></td><td><strong>$157,000</strong></td></tr>
-      <tr><td><strong>Gross Margin</strong></td><td>~40%</td><td>~57%</td><td>~63%</td></tr>
-      <tr><td><strong>Effective Hourly Rate</strong></td><td>~$0.50/hr</td><td>~$37/hr</td><td>~$67/hr</td></tr>
-      <tr><td><strong>Breakeven Point</strong></td><td>Month 10</td><td>&mdash;</td><td>&mdash;</td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-important">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7 7.5V4h2v3.5H7zm0 3V9h2v1.5H7z"/></svg></span>
-      Digital Revenue Impact
-    </div>
-    <div class="callout-body">
-      <p><strong>E-commerce and merch add $33,600/yr by Year 3</strong> with near-zero marginal cost. The website sells stones 24/7 while Donald sleeps, and Printful merch requires zero inventory or shipping. These digital channels transform SLA from a local craft business into a national e-commerce brand.</p>
-    </div>
-  </div>
-
-  <h2>11.4 Revenue by Category &mdash; Full-Time Year 3</h2>
-  <div class="diagram-container">
-    <div class="diagram-title">Year 3 Revenue Breakdown ($231.6K)</div>
-    <div class="pie-chart-container">
-      <div class="pie-chart" style="background: conic-gradient(
-        var(--charcoal) 0deg 46.6deg,
-        var(--sapphire) 46.6deg 121.2deg,
-        #6c5ce7 121.2deg 158.6deg,
-        var(--emerald) 158.6deg 186.6deg,
-        var(--ruby) 186.6deg 233.2deg,
-        var(--gold) 233.2deg 251.9deg,
-        #e17055 251.9deg 266.8deg,
-        #00b894 266.8deg 285.5deg,
-        #74b9ff 285.5deg 298.6deg,
-        #fab1a0 298.6deg 360deg
-      );"></div>
-      <div class="pie-legend">
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--charcoal)"></span> Custom Cutting ($30K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--sapphire)"></span> Stone + Jewelry Sales ($48K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:#6c5ce7"></span> E-Commerce + Merch ($33.6K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--emerald)"></span> Rough Stone Sales ($24K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--ruby)"></span> Wholesale ($30K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:var(--gold)"></span> Workshops ($18K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:#e17055"></span> Subscription Boxes ($12K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:#00b894"></span> Landscape Upsells ($12K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:#74b9ff"></span> YouTube/Affiliate ($9.6K)</div>
-        <div class="pie-legend-item"><span class="pie-legend-swatch" style="background:#fab1a0"></span> Consignment + Events ($14.4K)</div>
-      </div>
-    </div>
-  </div>
-
-  <h2>11.5 Break-Even Analysis</h2>
-  <div class="formula-box">
-Year 1 (Part-Time):
-  Monthly Fixed Costs: ~$250
-  Target: 30 stones/month by Month 6
-  Break-even: Month 10
-
-Year 2 (Full-Time):
-  Monthly Fixed Costs: ~$1,500 (workshop rent + insurance + marketing)
-  Production: 150&ndash;250 stones/month + workshops + adjacent streams
-  Monthly break-even: ~$3,100/month &rarr; achieved by Month 14
-
-Year 3 (Full-Time + Vietnam):
-  Monthly Fixed Costs: ~$3,000
-  Vietnam sourcing cuts material costs 40&ndash;60%
-  Monthly break-even: ~$6,000/month &rarr; well exceeded
-  </div>
-
-  <h2>11.6 Cash Flow Considerations</h2>
-  <div class="callout callout-warning">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 0L0 14h16L8 0zm-.75 5.5h1.5v4h-1.5v-4zm0 5.5h1.5v1.5h-1.5V11z"/></svg></span>
-      Cash Flow Advisory
-    </div>
-    <div class="callout-body">
-      <p><strong>Year 1 may be tight but should reach break-even.</strong> The landscaping LLC provides a critical safety net. Year 2 generates strong positive cash flow once full-time production ramps.</p>
-    </div>
-  </div>
-
-  <table>
-    <thead><tr><th>Quarter</th><th>Y1 Cash Flow</th><th>Y2 Cash Flow</th><th>Y3 Cash Flow</th></tr></thead>
-    <tbody>
-      <tr><td>Q1</td><td>($2,000)</td><td>$8,000</td><td>($2,000)*</td></tr>
-      <tr><td>Q2</td><td>($500)</td><td>$16,000</td><td>$30,000</td></tr>
-      <tr><td>Q3</td><td>$800</td><td>$22,000</td><td>$45,000</td></tr>
-      <tr><td>Q4</td><td>$1,200</td><td>$28,500</td><td>$52,400</td></tr>
-    </tbody>
-  </table>
-  <p style="font-size:0.82rem;color:var(--text-muted);">*Q1 Y3 reflects Vietnam trip investment &mdash; pays for itself by Q2</p>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 12: IMPLEMENTATION TIMELINE
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec12">
-  <h1><span class="section-num">12</span> Implementation Timeline</h1>
-
-  <h2>Phase 1: Foundation (Months 1&ndash;6)</h2>
-
-  <!-- CSS Gantt Chart -->
-  <div class="diagram-container">
-    <div class="diagram-title">Phase 1 Timeline &mdash; Aug 2026 through Jan 2027</div>
-    <div style="font-size:0.7rem;color:var(--text-muted);display:flex;margin-left:200px;margin-bottom:0.3rem;">
-      <span style="flex:1;text-align:center;">Aug</span>
-      <span style="flex:1;text-align:center;">Sep</span>
-      <span style="flex:1;text-align:center;">Oct</span>
-      <span style="flex:1;text-align:center;">Nov</span>
-      <span style="flex:1;text-align:center;">Dec</span>
-      <span style="flex:1;text-align:center;">Jan</span>
-    </div>
-    <div class="timeline-bar">
-      <div class="timeline-row">
-        <div class="timeline-label">File DBA</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:0;width:16.6%;background:var(--emerald);">Aug</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Sales Tax Certificate</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:0;width:16.6%;background:var(--emerald);">Aug</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Insurance Setup</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:0;width:16.6%;background:var(--emerald);">Aug</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Research &amp; Buy Equipment</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:0;width:33.2%;background:var(--sapphire);">Aug&ndash;Sep</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Workshop Setup</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:16.6%;width:16.6%;background:var(--sapphire);">Sep</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Join Gem &amp; Mineral Club</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:0;width:16.6%;background:var(--gold);">Aug</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Practice Cutting (100 stones)</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:16.6%;width:66.4%;background:var(--gold);">Sep&ndash;Dec</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">First NC Sourcing Trip</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:33.2%;width:16.6%;background:var(--ruby);">Oct</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">Launch Etsy Store</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:49.8%;width:16.6%;background:var(--ruby);">Nov</div></div>
-      </div>
-      <div class="timeline-row">
-        <div class="timeline-label">First Gem Show (vendor)</div>
-        <div class="timeline-track"><div class="timeline-fill" style="left:66.4%;width:16.6%;background:var(--ruby);">Dec</div></div>
-      </div>
-    </div>
-  </div>
-
-  <h3>Month-by-Month Actions</h3>
-  <table>
-    <thead><tr><th>Month</th><th>Key Actions</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Month 1</strong></td><td>File DBA, get sales tax cert, join gem club, order equipment</td></tr>
-      <tr><td><strong>Month 2</strong></td><td>Set up workshop, begin practicing on inexpensive rough (agate/jasper)</td></tr>
-      <tr><td><strong>Month 3</strong></td><td>First NC sourcing trip (Franklin mines), build inventory</td></tr>
-      <tr><td><strong>Month 4</strong></td><td>Cut 50+ practice stones, photograph best pieces, set up Etsy</td></tr>
-      <tr><td><strong>Month 5</strong></td><td>Launch Etsy store, attend first gem show as a buyer/networker</td></tr>
-      <tr><td><strong>Month 6</strong></td><td>First gem show as a vendor, evaluate what sells</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Phase 2: Growth (Months 7&ndash;18)</h2>
-  <table>
-    <thead><tr><th>Month</th><th>Key Actions</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Month 7&ndash;9</strong></td><td>Upgrade to slab saw, begin faceting training, monthly gem shows</td></tr>
-      <tr><td><strong>Month 10&ndash;12</strong></td><td>Launch workshops, build wholesale relationships with 3&ndash;5 jewelers</td></tr>
-      <tr><td><strong>Month 13&ndash;15</strong></td><td>Establish online presence (website, social media content), YouTube channel</td></tr>
-      <tr><td><strong>Month 16&ndash;18</strong></td><td>Research Vietnam trip logistics, connect with AGTA, customs broker</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Phase 3: Vietnam Direct (Months 18&ndash;30)</h2>
-  <table>
-    <thead><tr><th>Month</th><th>Key Actions</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Month 18&ndash;20</strong></td><td>First Vietnam trip (Luc Yen), build supplier relationships</td></tr>
-      <tr><td><strong>Month 21&ndash;24</strong></td><td>Process Vietnam rough, price and sell premium stones</td></tr>
-      <tr><td><strong>Month 25&ndash;27</strong></td><td>Scale wholesale accounts, expand show circuit</td></tr>
-      <tr><td><strong>Month 28&ndash;30</strong></td><td>Second Vietnam trip, evaluate full-time transition viability</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 13: RISK ANALYSIS
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec13">
-  <h1><span class="section-num">13</span> Risk Analysis &amp; Mitigation</h1>
-
-  <table>
-    <thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation Strategy</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Equipment failure</strong></td><td>Medium</td><td>Medium</td><td>Buy quality used American equipment; maintain warranty</td></tr>
-      <tr><td><strong>Slow initial sales</strong></td><td>High</td><td>Medium</td><td>Landscaping LLC provides income buffer; start small</td></tr>
-      <tr><td><strong>Stone damage/waste</strong></td><td>High (early)</td><td>Low</td><td>Practice on inexpensive material; track yield rates</td></tr>
-      <tr><td><strong>Inventory theft/loss</strong></td><td>Low</td><td>High</td><td>Inland marine insurance; secure storage; document everything</td></tr>
-      <tr><td><strong>Vietnam import regulation changes</strong></td><td>Medium</td><td>High</td><td>Maintain relationship with customs broker; diversify sources</td></tr>
-      <tr><td><strong>Vietnam travel risks</strong></td><td>Low</td><td>Medium</td><td>Travel insurance; local contacts; don't carry excessive cash</td></tr>
-      <tr><td><strong>Market downturn</strong></td><td>Low</td><td>Medium</td><td>Diversify revenue streams; maintain landscaping income</td></tr>
-      <tr><td><strong>Silica dust health risk</strong></td><td>Medium</td><td>High</td><td>Proper ventilation, wet cutting only, respirator use</td></tr>
-      <tr><td><strong>Competition from online imports</strong></td><td>Medium</td><td>Medium</td><td>Differentiate on provenance, custom work, and relationships</td></tr>
-      <tr><td><strong>Seasonal revenue fluctuation</strong></td><td>High</td><td>Medium</td><td>Build inventory during slow seasons; sell year-round online</td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout callout-caution">
-    <div class="callout-header">
-      <span class="callout-icon"><svg viewBox="0 0 16 16"><path d="M8 0L0 14h16L8 0zm-.75 5.5h1.5v4h-1.5v-4zm0 5.5h1.5v1.5h-1.5V11z"/></svg></span>
-      Health &amp; Safety
-    </div>
-    <div class="callout-body">
-      <p>Lapidary work generates silica dust, which is a serious respiratory hazard. <strong>Always use wet cutting methods, proper ventilation, and a NIOSH-rated respirator.</strong> This is non-negotiable.</p>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- ============================================================
-     SECTION 14: APPENDICES
-     ============================================================ -->
-<div class="page-content page-break-before" id="sec14">
-  <h1><span class="section-num">14</span> Appendices</h1>
-
-  <h2>Appendix A: Glossary of Lapidary Terms</h2>
-  <table>
-    <thead><tr><th>Term</th><th>Definition</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Cabochon</strong></td><td>A stone cut with a smooth, rounded dome (no facets)</td></tr>
-      <tr><td><strong>Faceting</strong></td><td>Cutting flat, polished surfaces (facets) on a gemstone</td></tr>
-      <tr><td><strong>Rough</strong></td><td>Uncut, unpolished raw gemstone material</td></tr>
-      <tr><td><strong>Slab</strong></td><td>A flat slice cut from a larger rock</td></tr>
-      <tr><td><strong>Preform</strong></td><td>A stone partially shaped before final cutting</td></tr>
-      <tr><td><strong>Dop</strong></td><td>A stick/holder used to secure a stone during cutting</td></tr>
-      <tr><td><strong>Lap</strong></td><td>A flat, spinning disk used for cutting/polishing</td></tr>
-      <tr><td><strong>Grit</strong></td><td>Abrasive material used for grinding (measured in mesh size)</td></tr>
-      <tr><td><strong>Yield</strong></td><td>The percentage of finished stone from raw rough material</td></tr>
-      <tr><td><strong>Mohs Hardness</strong></td><td>Scale (1&ndash;10) measuring mineral scratch resistance</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Appendix B: NC Mineral Resources Map</h2>
-  <p>Key collecting areas within driving distance of Greensboro:</p>
-  <table>
-    <thead><tr><th>Location</th><th>Distance</th><th>Minerals</th></tr></thead>
-    <tbody>
-      <tr><td>Hiddenite, NC</td><td>~80 mi (1.5 hr)</td><td>Emerald, sapphire, hiddenite</td></tr>
-      <tr><td>Cowee Valley, Franklin</td><td>~210 mi (3.5 hr)</td><td>Ruby, sapphire, garnet</td></tr>
-      <tr><td>Spruce Pine, NC</td><td>~165 mi (2.5 hr)</td><td>Aquamarine, feldspar, mica</td></tr>
-      <tr><td>Crabtree Mountain, NC</td><td>~170 mi (3 hr)</td><td>Emerald</td></tr>
-      <tr><td>Gold Hill, NC</td><td>~80 mi (1.5 hr)</td><td>Gold, pyrite, quartz</td></tr>
-      <tr><td>Virgilina, VA/NC border</td><td>~80 mi (1.5 hr)</td><td>Amethyst</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Appendix C: Recommended Training Resources</h2>
-  <table>
-    <thead><tr><th>Resource</th><th>Type</th><th>Cost</th></tr></thead>
-    <tbody>
-      <tr><td><strong>GIA</strong> (Gemological Institute of America)</td><td>Certificates &amp; Diplomas</td><td>$500&ndash;$5,000+</td></tr>
-      <tr><td><strong>Greensboro Gem &amp; Mineral Club</strong></td><td>Hands-on mentorship</td><td>~$25/yr membership</td></tr>
-      <tr><td><strong>YouTube Channels</strong> (Dan's Gems, Rockhound Resources)</td><td>Free tutorials</td><td>Free</td></tr>
-      <tr><td><strong>William Holland School of Lapidary Arts</strong> (GA)</td><td>Intensive workshops</td><td>~$300&ndash;$600/week</td></tr>
-      <tr><td><strong>Wild Acres Retreat</strong> (Little Switzerland, NC)</td><td>Lapidary workshops</td><td>~$400&ndash;$600/week</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Appendix D: Key Contacts</h2>
-  <table>
-    <thead><tr><th>Contact</th><th>Purpose</th><th>How to Reach</th></tr></thead>
-    <tbody>
-      <tr><td>Guilford County Register of Deeds</td><td>DBA filing</td><td>guilfordcountync.gov</td></tr>
-      <tr><td>NC Department of Revenue</td><td>Sales tax certificate</td><td>ncdor.gov</td></tr>
-      <tr><td>Greensboro Gem &amp; Mineral Club</td><td>Mentorship, equipment</td><td>Local search</td></tr>
-      <tr><td>AGTA (American Gem Trade Association)</td><td>Trade association, Vietnam contacts</td><td>agta.org</td></tr>
-      <tr><td>GIA</td><td>Certification, grading</td><td>gia.edu</td></tr>
-      <tr><td>U.S. Customs &amp; Border Protection</td><td>Import regulations</td><td>cbp.gov</td></tr>
-    </tbody>
-  </table>
-
-  <hr class="section-divider">
-
-  <!-- NEXT STEPS -->
-  <div class="action-box">
-    <h3>Next Steps for Donald</h3>
+    <div class="section-header">1. Executive Summary</div>
+    
+    <p><strong>Southeastern Lapidary Associates</strong> (SLA) will operate as a DBA under Donald Herbin's existing landscaping LLC, providing professional lapidary services — the art and science of cutting, shaping, polishing, and finishing gemstones and ornamental stones. Based in Greensboro, NC, the business will capitalize on North Carolina's rich gemological heritage (the state is home to rubies, sapphires, emeralds, and garnets) and the growing U.S. market for colored gemstones.</p>
+
+    <h3>The Opportunity</h3>
+    <table>
+        <tr><th>Factor</th><th>Detail</th></tr>
+        <tr><td><strong>Market Size</strong></td><td>U.S. colored gemstone market projected to grow at <strong>6–7% CAGR through 2033</strong></td></tr>
+        <tr><td><strong>Consumer Trend</strong></td><td>"Jewelry premiumization" — fewer purchases, higher spend per piece</td></tr>
+        <tr><td><strong>NC Advantage</strong></td><td>One of the most gem-rich states in the U.S. (rubies, sapphires, emeralds, garnets)</td></tr>
+        <tr><td><strong>Competitive Edge</strong></td><td>Direct Vietnam sourcing (Phase 3) = <strong>40–60% cost reduction</strong> on raw material</td></tr>
+        <tr><td><strong>Synergy</strong></td><td>Landscaping LLC provides existing business infrastructure, client base, and cash flow</td></tr>
+    </table>
+
+    <h3>Business Model Summary</h3>
+    <p>SLA will generate revenue through <strong>five primary channels</strong>:</p>
     <ol>
-      <li><strong>This week:</strong> File the DBA at Guilford County Register of Deeds ($26&ndash;$41)</li>
-      <li><strong>This week:</strong> Join the Greensboro Gem &amp; Mineral Club</li>
-      <li><strong>This month:</strong> Purchase Phase 1 equipment (trim saw + cabochon machine + tumbler)</li>
-      <li><strong>Next 90 days:</strong> Practice cutting 100+ stones, build initial inventory</li>
-      <li><strong>Within 6 months:</strong> Attend first gem show as a vendor, launch Etsy store</li>
+        <li><strong>Custom Stone Cutting & Polishing</strong> — B2B and B2C services for jewelers, collectors, and hobbyists</li>
+        <li><strong>Finished Stone Sales</strong> — Cabochons, faceted stones, and tumbled stones sold online and at gem shows</li>
+        <li><strong>Rough Stone Sales</strong> — NC-sourced and eventually Vietnam-sourced rough material</li>
+        <li><strong>Workshops & Classes</strong> — Hands-on lapidary instruction for hobbyists</li>
+        <li><strong>Wholesale to Jewelers</strong> — Volume supply relationships with independent jewelry makers</li>
     </ol>
-  </div>
-</div>
 
-<!-- ============================================================
-     DOCUMENT FOOTER
-     ============================================================ -->
-<div class="page-footer">
-  <span>Prepared by Think! Design and Planning, LLC for Donald Herbin</span>
-  <span>This document is for planning purposes and does not constitute legal, financial, or tax advice.</span>
-</div>
+    <h3>Phase Rollout</h3>
+    <table>
+        <tr><th>Phase</th><th>Timeline</th><th>Work Mode</th><th>Focus</th><th>Investment</th></tr>
+        <tr><td><strong>Phase 1: Foundation</strong></td><td>Months 1–12</td><td><strong>Part-Time</strong> (20–25 hrs/wk alongside landscaping)</td><td>Equipment setup, skill building, NC sourcing, local sales</td><td>$5,000–$6,500</td></tr>
+        <tr><td><strong>Phase 2: Full-Time Transition</strong></td><td>Months 13–24</td><td><strong>Full-Time</strong> (40–50 hrs/wk)</td><td>Scale production, online growth, workshops, adjacent revenue</td><td>$5,000–$8,000</td></tr>
+        <tr><td><strong>Phase 3: Vietnam Direct + Scale</strong></td><td>Months 24–36</td><td><strong>Full-Time</strong></td><td>Direct Vietnam sourcing, wholesale expansion, jewelry integration</td><td>$8,000–$15,000</td></tr>
+    </table>
 
-</div><!-- end page-container -->
+    <div class="section-header">2. Industry Analysis & Market Research</div>
+
+    <h3>2.1 The Lapidary Industry</h3>
+    <p>The lapidary industry encompasses the cutting, shaping, polishing, and engraving of stones — both precious gemstones and semi-precious ornamental materials. It sits at the intersection of <strong>artisanal craftsmanship</strong>, <strong>geology</strong>, and the <strong>jewelry supply chain</strong>.</p>
+
+    <div class="diagram">
+        <div style="font-weight:bold; margin-bottom: 10px; text-align: center;">Lapidary Industry Structure</div>
+        <div class="tree-level">
+            <div class="tree-node accent">Lapidary Industry</div>
+        </div>
+        <div class="tree-level">
+            <div class="tree-node">Cabochon Cutting</div>
+            <div class="tree-node">Faceting</div>
+            <div class="tree-node">Tumbling</div>
+            <div class="tree-node">Slabbing & Bookends</div>
+            <div class="tree-node">Carving & Sculpture</div>
+        </div>
+    </div>
+
+    <h3>Key Industry Metrics</h3>
+    <table>
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>U.S. Colored Gemstone Market CAGR</td><td>6–7% (through 2033)</td></tr>
+        <tr><td>Typical Gross Profit Margins</td><td>20–60% (depending on sourcing & value-add)</td></tr>
+        <tr><td>Home-Based Startup Cost</td><td>$3,000–$7,000</td></tr>
+        <tr><td>Professional Workshop Cost</td><td>$8,000–$25,000+</td></tr>
+        <tr><td>Key Growth Driver</td><td>Colored engagement stones (emerald, sapphire, ruby)</td></tr>
+    </table>
+
+    <h3>Industry Trends Favoring SLA</h3>
+    <ol>
+        <li><strong>Premiumization</strong> — Consumers buying fewer, higher-quality pieces → favors custom/artisan work over mass production</li>
+        <li><strong>Colored Stone Renaissance</strong> — Shift from diamond-centric to colored engagement rings (sapphire, emerald, morganite)</li>
+        <li><strong>Origin Story Marketing</strong> — Buyers increasingly value provenance (NC-mined, ethically sourced)</li>
+        <li><strong>Maker Economy</strong> — Growing community of independent jewelers seeking reliable stone suppliers</li>
+        <li><strong>Metaphysical/Wellness Market</strong> — Crystals and healing stones represent a multi-billion-dollar niche</li>
+    </ol>
+
+    <h3>2.2 Competitive Landscape</h3>
+    <table>
+        <tr><th>Competitor Type</th><th>Examples</th><th>SLA Advantage</th></tr>
+        <tr><td>Local Lapidaries</td><td>Individual hobbyists selling at shows</td><td>Professional-grade equipment, consistent quality</td></tr>
+        <tr><td>Online Stone Sellers</td><td>Etsy/eBay shops</td><td>NC provenance story, local pickup, custom work</td></tr>
+        <tr><td>NC Mine Gift Shops</td><td>Franklin, Hiddenite shops</td><td>Year-round availability, custom cutting services</td></tr>
+        <tr><td>Wholesale Importers</td><td>Large gem dealers</td><td>Personal service, niche/rare stones, local relationships</td></tr>
+    </table>
+
+    <div class="section-header">3. Business Description & Legal Structure</div>
+
+    <h3>3.1 Legal Setup</h3>
+    <table>
+        <tr><th>Item</th><th>Detail</th></tr>
+        <tr><td><strong>Legal Entity</strong></td><td>Existing Landscaping LLC (NC)</td></tr>
+        <tr><td><strong>Trade Name (DBA)</strong></td><td>Southeastern Lapidary Associates</td></tr>
+        <tr><td><strong>Filing Type</strong></td><td>NC Assumed Business Name Certificate</td></tr>
+        <tr><td><strong>Filing Office</strong></td><td>Guilford County Register of Deeds</td></tr>
+        <tr><td><strong>Filing Fee</strong></td><td>$26 (in-person/mail) or ~$41 (e-filing)</td></tr>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Action Required</div>
+        <strong>Step-by-step process for Donald:</strong>
+        <ol>
+            <li><strong>Search name availability</strong> — Check the NC Secretary of State database.</li>
+            <li><strong>Check Guilford County</strong> — Verify at the Register of Deeds.</li>
+            <li><strong>Complete the Certificate</strong> — Include exact legal LLC name and SOSID number.</li>
+            <li><strong>File the certificate</strong> — Submit to Guilford County Register of Deeds.</li>
+            <li><strong>Pay the fee</strong> — $26 recording fee.</li>
+        </ol>
+    </div>
+
+    <h3>3.3 Additional Requirements</h3>
+    <table>
+        <tr><th>Requirement</th><th>Detail</th><th>Est. Cost</th></tr>
+        <tr><td>NC Sales Tax Certificate</td><td>Required for retail sales — file with NC DOR</td><td>Free</td></tr>
+        <tr><td>Greensboro Privilege License</td><td>Check with City of Greensboro</td><td>Varies</td></tr>
+        <tr><td>Home Occupation Permit</td><td>If operating from home workshop</td><td>~$0–$50</td></tr>
+        <tr><td>General Liability Insurance</td><td>Covers equipment, premises, products</td><td>$500–$1,200/yr</td></tr>
+        <tr><td>Inland Marine Insurance</td><td>Covers high-value stone inventory in transit</td><td>$300–$600/yr</td></tr>
+    </table>
+
+    <div class="section-header">4. Products, Services & Revenue Streams</div>
+
+    <div class="diagram">
+        <div style="font-weight:bold; margin-bottom: 10px;">Projected Revenue Mix (Year 2)</div>
+        <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">Custom Cutting</div><div class="bar" style="width: 30%;">30%</div></div>
+            <div class="bar-row"><div class="bar-label">Finished Stone Sales</div><div class="bar" style="width: 25%;">25%</div></div>
+            <div class="bar-row"><div class="bar-label">Rough Stone Sales</div><div class="bar" style="width: 15%;">15%</div></div>
+            <div class="bar-row"><div class="bar-label">Workshops & Classes</div><div class="bar" style="width: 15%;">15%</div></div>
+            <div class="bar-row"><div class="bar-label">Wholesale</div><div class="bar" style="width: 15%;">15%</div></div>
+        </div>
+    </div>
+
+    <h3>4.2 Detailed Product/Service Catalog</h3>
+    
+    <h4>A. Custom Stone Cutting & Polishing Services</h4>
+    <table>
+        <tr><th>Service</th><th>Description</th><th>Price Range</th></tr>
+        <tr><td>Cabochon Cutting</td><td>Shaped, polished dome stones from rough</td><td>$15–$75/stone</td></tr>
+        <tr><td>Faceting</td><td>Precision-cut gemstones with geometric facets</td><td>$50–$300+/stone</td></tr>
+        <tr><td>Slab Cutting</td><td>Cut rough rock into display slabs</td><td>$5–$25/cut</td></tr>
+        <tr><td>Tumbling Service</td><td>Batch tumbling for hobbyists/collectors</td><td>$10–$30/lb</td></tr>
+        <tr><td>Repair/Repolish</td><td>Recut or repolish damaged stones</td><td>$20–$100/stone</td></tr>
+    </table>
+
+    <h4>B. Finished Stone Sales</h4>
+    <table>
+        <tr><th>Product</th><th>Description</th><th>Price Range</th></tr>
+        <tr><td>NC Ruby/Sapphire Cabochons</td><td>Native Cowee Valley material</td><td>$25–$200+</td></tr>
+        <tr><td>Agate/Jasper Cabochons</td><td>Varied patterns, jewelry-ready</td><td>$8–$50</td></tr>
+        <tr><td>Tumbled Stones (bulk)</td><td>Mixed lots for resale/metaphysical</td><td>$3–$15/lb</td></tr>
+        <tr><td>Specimen Slabs</td><td>Display-quality polished slabs</td><td>$15–$100+</td></tr>
+        <tr><td>Faceted Gemstones</td><td>Precision-cut for fine jewelry</td><td>$50–$500+</td></tr>
+    </table>
+
+    <h4>C. Rough Stone Sales</h4>
+    <table>
+        <tr><th>Product</th><th>Description</th><th>Price Range</th></tr>
+        <tr><td>NC-Sourced Rough</td><td>Cowee Valley ruby/sapphire, Hiddenite emerald</td><td>$10–$100+/lot</td></tr>
+        <tr><td>Mixed Lapidary Rough</td><td>Agate, jasper, obsidian, opal</td><td>$5–$30/lb</td></tr>
+        <tr><td>Premium Import Rough</td><td>Vietnam ruby, sapphire, spinel (Phase 3)</td><td>$20–$500+/lot</td></tr>
+    </table>
+
+    <h4>D. Workshops & Classes</h4>
+    <table>
+        <tr><th>Offering</th><th>Description</th><th>Price</th></tr>
+        <tr><td>Intro to Lapidary (3hr)</td><td>Basics of cutting & polishing, take home a stone</td><td>$75–$100/person</td></tr>
+        <tr><td>Cabochon Workshop (full day)</td><td>Cut and polish your own cabochon</td><td>$125–$175/person</td></tr>
+        <tr><td>Private Lessons</td><td>1-on-1 instruction</td><td>$60–$80/hour</td></tr>
+    </table>
+
+    <h4>E. Wholesale Supply</h4>
+    <table>
+        <tr><th>Channel</th><th>Description</th><th>Terms</th></tr>
+        <tr><td>Local Jewelers</td><td>Ongoing supply of cut stones</td><td>Net 30, volume pricing</td></tr>
+        <tr><td>Etsy/Online Sellers</td><td>Bulk cabochons and rough</td><td>Prepaid, lot pricing</td></tr>
+        <tr><td>Metaphysical Shops</td><td>Tumbled stones, crystals, rough</td><td>Consignment or wholesale</td></tr>
+    </table>
+
+    <div class="section-header">5. Adjacent Revenue Streams (Low-Effort / High-Return)</div>
+
+    <div class="callout">
+        <div class="callout-title">The Multiplier Effect</div>
+        These are the money multipliers — activities that leverage Donald's existing skills, equipment, and landscaping LLC with minimal additional effort. Each one is designed to stack on top of core lapidary work.
+    </div>
+
+    <table>
+        <tr><th>Rank</th><th>Adjacent Stream</th><th>Startup Cost</th><th>Monthly Revenue Potential</th><th>Effort Level</th></tr>
+        <tr><td>1</td><td><strong>Wire-Wrapped Jewelry</strong></td><td>$50–$150</td><td>$1,000–$3,000</td><td>Low–Medium</td></tr>
+        <tr><td>2</td><td><strong>Landscape Stone Upsells</strong></td><td>$0</td><td>$500–$2,000</td><td>Very Low</td></tr>
+        <tr><td>3</td><td><strong>Consignment in Shops</strong></td><td>$0</td><td>$300–$800</td><td>Very Low</td></tr>
+        <tr><td>4</td><td><strong>YouTube/TikTok Content</strong></td><td>$0</td><td>$200–$2,000+</td><td>Low</td></tr>
+        <tr><td>5</td><td><strong>Monthly Subscription Boxes</strong></td><td>$200</td><td>$500–$2,000</td><td>Low–Medium</td></tr>
+        <tr><td>6</td><td><strong>Tumbled Stone Lots</strong></td><td>$100</td><td>$300–$1,000</td><td>Very Low</td></tr>
+    </table>
+
+    <h3>Top Streams Breakdown</h3>
+    <p><strong>1. Wire-Wrapped Jewelry:</strong> The biggest lever. A $5 cabochon becomes a $40–$150 pendant with 30 minutes of wire wrapping. 20x-50x markup on raw material.</p>
+    <p><strong>2. Landscape Stone Upsells:</strong> The synergy play. Offer polished accent stones or engraved garden stones to existing landscaping clients. Zero customer acquisition cost.</p>
+    <p><strong>3. YouTube/TikTok Content:</strong> Film the cutting/polishing process. Content creates itself from daily work.</p>
+
+    <div class="diagram">
+        <div style="font-weight:bold; margin-bottom: 10px;">Stacking the Streams (Pipeline)</div>
+        <div class="flow-container">
+            <div class="flow-node dark">Raw Stone</div> <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node purple">Cut & Polish</div> <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node" style="background:#e17055;">Video Content</div> <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node">Loose Stone</div> <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node purple">Wire-Wrap Jewelry</div> <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node dark">Retail/Consign</div>
+        </div>
+    </div>
+
+    <div class="section-header">6. Equipment & Infrastructure</div>
+
+    <h3>Phase 1 Equipment Budget (~$5,000)</h3>
+    <table>
+        <tr><th>Equipment</th><th>New Price</th><th>Used Price</th><th>Recommended</th></tr>
+        <tr><td>Trim Saw (6"–8")</td><td>$400–$700</td><td>$200–$350</td><td>Used Highland Park or Lortone</td></tr>
+        <tr><td>Cabochon Machine</td><td>$500–$1,500</td><td>$300–$700</td><td>Ameritool or used Covington</td></tr>
+        <tr><td>Rock Tumbler (rotary)</td><td>$80–$200</td><td>$40–$100</td><td>Lortone 33B or 45C</td></tr>
+        <tr><td>Flat Lap Machine</td><td>$300–$800</td><td>$150–$400</td><td>Used for flat surfaces</td></tr>
+        <tr><td>Diamond Blades</td><td>$50–$200</td><td>N/A</td><td>MK Diamond or Felker</td></tr>
+        <tr><td>Supplies & Safety</td><td>$275–$550</td><td>N/A</td><td>Silicon carbide, respirators</td></tr>
+    </table>
+
+    <div class="section-header">7. North Carolina Gem Resources & Sourcing</div>
+
+    <p>North Carolina is one of the most mineralogically diverse states in the U.S. and is home to world-class gemstone deposits.</p>
+
+    <table>
+        <tr><th>Gemstone</th><th>Location</th><th>Quality/Notes</th></tr>
+        <tr><td><strong>Ruby/Sapphire</strong></td><td>Cowee Valley, Macon County</td><td>Pink/red/blue, some gem-quality</td></tr>
+        <tr><td><strong>Emerald</strong></td><td>Hiddenite, Alexander County</td><td>NC is the only significant U.S. source</td></tr>
+        <tr><td><strong>Aquamarine</strong></td><td>Spruce Pine, Mitchell County</td><td>Blue-green, collectible</td></tr>
+        <tr><td><strong>Rhodolite Garnet</strong></td><td>Cowee Valley</td><td>Raspberry-pink, jewelry-grade</td></tr>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Immediate Action</div>
+        Join the Greensboro Gem & Mineral Club ASAP. Membership provides access to expensive equipment (slab saws, faceting machines) while building skills, plus a network of mentors and potential customers.
+    </div>
+
+    <div class="section-header">8. Vietnam Sourcing Strategy (Phase 3)</div>
+
+    <p>Vietnam is a world-class source for premium gemstones, particularly from the <strong>Luc Yen</strong> and <strong>Quy Chau</strong> mining districts. Direct sourcing eliminates multiple middlemen and can reduce rough material costs by <strong>40–60%</strong>.</p>
+    
+    <table>
+        <tr><th>Gemstone</th><th>Region</th><th>Quality</th></tr>
+        <tr><td><strong>Ruby</strong></td><td>Luc Yen, Yen Bai</td><td>World-class, vivid red</td></tr>
+        <tr><td><strong>Sapphire</strong></td><td>Luc Yen; Dak Nong</td><td>Blue, pink, yellow</td></tr>
+        <tr><td><strong>Spinel</strong></td><td>Luc Yen</td><td>Vibrant red, pink, cobalt blue</td></tr>
+    </table>
+
+    <h3>Vietnam Trip Budget (Estimated)</h3>
+    <table>
+        <tr><th>Expense</th><th>Estimated Cost</th></tr>
+        <tr><td>Airfare (GSO &rarr; Hanoi)</td><td>$1,200–$1,800</td></tr>
+        <tr><td>Lodging & Travel (7-10 days)</td><td>$350–$850</td></tr>
+        <tr><td>Local Guide/Fixer</td><td>$200–$500</td></tr>
+        <tr><td>Rough Material Purchases</td><td>$3,000–$10,000</td></tr>
+        <tr class="total-row"><td>TOTAL per trip</td><td>$5,150–$14,050</td></tr>
+    </table>
+
+    <div class="section-header">9. Marketing & Sales Strategy</div>
+
+    <h3>Brand Positioning</h3>
+    <p><strong>"Southeastern Lapidary Associates — From Earth to Art, Stone by Stone"</strong></p>
+    <p>Position SLA as a premium-but-accessible lapidary service specializing in NC-native gemstones, custom cutting for independent jewelers, and direct-sourced Vietnamese rubies and spinels.</p>
+
+    <h3>Marketing Tactics</h3>
+    <table>
+        <tr><th>Channel</th><th>Strategy</th><th>Budget</th></tr>
+        <tr><td><strong>SLA Website</strong></td><td>Full stone shop, merch store, workshop booking</td><td>$0</td></tr>
+        <tr><td><strong>Instagram</strong></td><td>Process videos, before/after, Reels</td><td>Free</td></tr>
+        <tr><td><strong>YouTube/TikTok</strong></td><td>Satisfying stone-cutting videos</td><td>Free</td></tr>
+        <tr><td><strong>Etsy</strong></td><td>Professional product listings with NC provenance</td><td>0.20/listing + 6.5%</td></tr>
+        <tr><td><strong>Gem Shows</strong></td><td>Vendor tables, networking, direct sales</td><td>$50–$200/table</td></tr>
+    </table>
+
+    <div class="section-header">10. Digital Platform & E-Commerce Strategy</div>
+
+    <p>The SLA website is not just a brochure — it's a <strong>full e-commerce platform</strong> that serves as the central hub for all revenue streams.</p>
+
+    <table>
+        <tr><th>Component</th><th>Technology</th><th>Purpose</th></tr>
+        <tr><td><strong>Frontend</strong></td><td>Vanilla HTML/CSS/JS</td><td>Premium dark theme, responsive, fast</td></tr>
+        <tr><td><strong>E-Commerce</strong></td><td>Stripe Checkout API</td><td>Stone purchases, merch, workshop bookings</td></tr>
+        <tr><td><strong>Merch Store</strong></td><td>Printful</td><td>Branded apparel, mugs — zero inventory</td></tr>
+        <tr><td><strong>Multi-Language</strong></td><td>Custom i18n (EN/ES/VI)</td><td>Reach Hispanic market + Vietnamese suppliers</td></tr>
+    </table>
+
+    <h3>Merch Store (Printful — Zero Inventory)</h3>
+    <table>
+        <tr><th>Product</th><th>Retail Price</th><th>Donald's Profit</th></tr>
+        <tr><td>SLA Classic Tee</td><td>$35.00</td><td>~$15–$18</td></tr>
+        <tr><td>Lapidary Hoodie</td><td>$55.00</td><td>~$20–$25</td></tr>
+        <tr><td>Gem Cutter Mug</td><td>$22.00</td><td>~$10–$12</td></tr>
+    </table>
+
+    <div class="section-header">11. Operations Plan</div>
+
+    <h3>Workshop Setup Requirements</h3>
+    <ul>
+        <li><strong>Water Supply & Drainage:</strong> Continuous flow for cooling saws, settling tank for slurry runoff.</li>
+        <li><strong>Electrical:</strong> 20A dedicated circuits.</li>
+        <li><strong>Ventilation:</strong> Proper dust management (silica dust is a serious hazard).</li>
+        <li><strong>Lighting:</strong> LED daylight-balanced for accurate stone grading.</li>
+    </ul>
+
+    <div class="section-header">12. Financial Projections (3-Year)</div>
+
+    <p><strong>Strategy:</strong> Part-time Year 1 (20–25 hrs/wk alongside landscaping) &rarr; Full-time Year 2+ (40–50 hrs/wk). Adjacent revenue streams activate in Year 2 to maximize income.</p>
+
+    <h3>Profit & Loss Summary</h3>
+    <table>
+        <tr><th>Metric</th><th>Year 1 (Part-Time)</th><th>Year 2 (Full-Time)</th><th>Year 3 (Full-Time + Vietnam)</th></tr>
+        <tr><td><strong>Revenue</strong></td><td>$10,500</td><td>$126,000</td><td>$231,600</td></tr>
+        <tr><td><strong>Total Expenses</strong></td><td>$9,900</td><td>$38,600</td><td>$74,600</td></tr>
+        <tr class="total-row"><td><strong>Net Profit (Loss)</strong></td><td>$600</td><td>$87,400</td><td>$157,000</td></tr>
+        <tr><td><strong>Gross Margin</strong></td><td>~40%</td><td>~57%</td><td>~63%</td></tr>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Digital Scale</div>
+        E-commerce and merch add $33,600/yr by Year 3 with near-zero marginal cost. The website sells stones 24/7 while Donald sleeps, and Printful merch requires zero inventory or shipping.
+    </div>
+
+    <div class="section-header">13. Implementation Timeline</div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-title">Months 1-6 (Foundation)</div>
+            <div class="timeline-desc">File DBA, get sales tax cert, join gem club. Set up workshop, purchase Phase 1 equipment. Practice cutting 100+ stones. Attend first gem show.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-title">Months 7-18 (Growth)</div>
+            <div class="timeline-desc">Upgrade to slab saw, faceting training. Launch workshops, build wholesale relationships. Establish online presence and website.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-title">Months 18-30 (Vietnam Direct)</div>
+            <div class="timeline-desc">First Vietnam trip (Luc Yen). Process rough, price and sell premium stones. Scale wholesale accounts. Expand show circuit.</div>
+        </div>
+    </div>
+
+    <div class="section-header">14. Risk Analysis & Mitigation</div>
+    <table>
+        <tr><th>Risk</th><th>Mitigation Strategy</th></tr>
+        <tr><td><strong>Equipment failure</strong></td><td>Buy quality used American equipment; maintain warranty</td></tr>
+        <tr><td><strong>Slow initial sales</strong></td><td>Landscaping LLC provides income buffer; start small</td></tr>
+        <tr><td><strong>Silica dust health risk</strong></td><td>Proper ventilation, wet cutting only, respirator use</td></tr>
+        <tr><td><strong>Inventory theft/loss</strong></td><td>Inland marine insurance; secure storage</td></tr>
+    </table>
+
+    <div class="section-header">15. Appendices</div>
+    
+    <h3>Key Contacts</h3>
+    <table>
+        <tr><th>Contact</th><th>Purpose</th></tr>
+        <tr><td>Guilford County Register of Deeds</td><td>DBA filing</td></tr>
+        <tr><td>Greensboro Gem & Mineral Club</td><td>Mentorship, equipment access</td></tr>
+        <tr><td>AGTA (American Gem Trade Association)</td><td>Trade association, Vietnam contacts</td></tr>
+        <tr><td>U.S. Customs & Border Protection</td><td>Import regulations</td></tr>
+    </table>
+
+    <div class="footer">
+        Prepared by Think! Design and Planning, LLC for Donald Herbin<br>
+        This document is for planning purposes and does not constitute legal, financial, or tax advice.
+    </div>
 
 </body>
 </html>
