@@ -37,15 +37,22 @@ window.SHOP = {
     },
 
     createProductCard(product) {
-        const iconSvg = window.ICONS && window.ICONS.getIcon ? window.ICONS.getIcon(product.stone.toLowerCase(), 80) : '';
-        const iconStyle = product.color ? `background-color: ${product.color}20; color: ${product.color};` : '';
         const price = typeof product.price === 'number' ? `$${product.price.toFixed(2)}` : product.price;
         const stockStatus = product.inStock ? '' : '<div class="out-of-stock-badge">Out of Stock</div>';
         
+        // Use real image if available, fallback to SVG icon
+        let imageContent;
+        if (product.image) {
+            imageContent = `<img src="${product.image}" alt="${product.name}" class="product-gem-image">`;
+        } else {
+            const iconSvg = window.ICONS && window.ICONS.getIcon ? window.ICONS.getIcon(product.stone.toLowerCase(), 80) : '';
+            imageContent = iconSvg;
+        }
+        
         return `
             <div class="product-card ${product.inStock ? '' : 'out-of-stock'}" data-id="${product.id}">
-                <div class="product-image-container" style="${iconStyle}">
-                    ${iconSvg}
+                <div class="product-image-container">
+                    ${imageContent}
                     ${stockStatus}
                 </div>
                 <div class="product-info">
@@ -65,6 +72,7 @@ window.SHOP = {
                 </div>
             </div>
         `;
+
     },
 
     addToCart(productId) {
