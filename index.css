@@ -200,10 +200,15 @@ h6 { font-size: 0.85rem; font-weight: 500; }
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-full);
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-lg);
   object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .logo-text {
@@ -466,6 +471,14 @@ h6 { font-size: 0.85rem; font-weight: 500; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: opacity 1s ease;
+}
+
+/* Hide poster once video starts playing */
+.hero-video:not([poster]) ~ .hero-poster,
+.hero-video.playing ~ .hero-poster {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-overlay {
