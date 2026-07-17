@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Southeastern Lapidary Associates — Premium custom stone cutting, NC native gemstones, wire-wrapped jewelry, and lapidary workshops in Greensboro, North Carolina. From Earth to Art, Stone by Stone.">
+  <meta name="keywords" content="lapidary, gemstones, stone cutting, cabochons, faceted gems, NC rubies, NC sapphires, wire wrapping, Greensboro NC, gem shows, workshops">
+  <meta name="author" content="Southeastern Lapidary Associates">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Southeastern Lapidary Associates — From Earth to Art">
+  <meta property="og:description" content="Premium custom stone cutting, NC native gemstones, wire-wrapped jewelry, and lapidary workshops in Greensboro, North Carolina.">
+  <meta property="og:image" content="assets/images/polished-gemstones.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://southeasternlapidary.com">
+
+  <title>Southeastern Lapidary Associates — From Earth to Art, Stone by Stone</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/sla-logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HEADER / NAVIGATION                            -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <header id="main-header" class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="#hero" class="logo-link" aria-label="Southeastern Lapidary Associates Home">
+        <img src="assets/images/sla-logo.png" alt="SLA Logo" class="logo-image" width="40" height="40">
+        <span class="logo-text">Southeastern Lapidary</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#shop" class="nav-link" data-i18n="nav.shop">Shop</a></li>
+          <li><a href="#merch" class="nav-link" data-i18n="nav.merch">Merch</a></li>
+          <li><a href="#workshops" class="nav-link" data-i18n="nav.workshops">Workshops</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div id="lang-switcher" class="lang-switcher">
+          <button id="lang-toggle" class="lang-toggle" aria-label="Change language" aria-expanded="false">
+            <span class="lang-flag" id="current-lang-flag"></span>
+            <span class="lang-code" id="current-lang-code">EN</span>
+            <span class="lang-chevron" id="lang-chevron-icon"></span>
+          </button>
+          <div id="lang-dropdown" class="lang-dropdown" role="menu">
+            <button class="lang-option" data-lang="en" role="menuitem">
+              <span class="lang-flag-option" id="flag-en"></span>
+              <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="es" role="menuitem">
+              <span class="lang-flag-option" id="flag-es"></span>
+              <span>Español</span>
+            </button>
+            <button class="lang-option" data-lang="vi" role="menuitem">
+              <span class="lang-flag-option" id="flag-vi"></span>
+              <span>Tiếng Việt</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <button id="cart-toggle" class="cart-toggle" aria-label="Open shopping cart">
+          <span id="cart-icon"></span>
+          <span id="cart-badge" class="cart-badge" aria-live="polite">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" class="mobile-nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#shop" class="mobile-nav-link" data-i18n="nav.shop">Shop</a></li>
+          <li><a href="#merch" class="mobile-nav-link" data-i18n="nav.merch">Merch</a></li>
+          <li><a href="#workshops" class="mobile-nav-link" data-i18n="nav.workshops">Workshops</a></li>
+          <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HERO SECTION                                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="hero" class="hero-section">
+    <!-- Video Background -->
+    <video
+      id="hero-video"
+      class="hero-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="assets/images/hero-stone-cutting.png"
+      aria-hidden="true"
+    >
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay Gradient -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-location-badge animate-on-scroll fade-in">
+        <span id="location-icon"></span>
+        <span data-i18n="hero.location">Greensboro, North Carolina</span>
+      </div>
+
+      <h1 class="hero-title animate-on-scroll slide-up">
+        <span data-i18n="hero.title">From Earth to Art</span>
+      </h1>
+
+      <p class="hero-tagline animate-on-scroll slide-up">
+        <span data-i18n="hero.tagline">Stone by Stone</span>
+      </p>
+
+      <p class="hero-subtitle animate-on-scroll fade-in">
+        <span data-i18n="hero.subtitle">Southeastern Lapidary Associates</span>
+      </p>
+
+      <div class="hero-cta-group animate-on-scroll slide-up">
+        <a href="#shop" class="btn btn-primary" id="hero-cta-shop">
+          <span id="hero-shop-icon"></span>
+          <span data-i18n="hero.cta.shop">Shop Stones</span>
+        </a>
+        <a href="#workshops" class="btn btn-secondary" id="hero-cta-workshop">
+          <span id="hero-workshop-icon"></span>
+          <span data-i18n="hero.cta.workshop">Book a Workshop</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span id="scroll-arrow-icon"></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ABOUT SECTION                                  -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Image Column -->
+        <div class="about-image-wrap animate-on-scroll slide-right">
+          <img src="assets/images/polished-gemstones.png" alt="Polished gemstones by Southeastern Lapidary Associates" class="about-image" loading="lazy">
+          <div class="about-image-accent" aria-hidden="true"></div>
+        </div>
+
+        <!-- Text Column -->
+        <div class="about-text-wrap">
+          <h2 class="section-title animate-on-scroll slide-up" data-i18n="about.title">Our Story</h2>
+          <p class="section-subtitle animate-on-scroll fade-in" data-i18n="about.subtitle">A legacy of craftsmanship rooted in the heart of North Carolina</p>
+          <p class="about-description animate-on-scroll fade-in" data-i18n="about.description">
+            Donald Herbin has been cutting, polishing, and crafting gemstones for over a decade in Greensboro, North Carolina.
+            What started as a passion for the earth's natural treasures has grown into Southeastern Lapidary Associates — a trusted
+            source for NC native stones, custom cuts, wire-wrapped jewelry, and hands-on lapidary education.
+            Every stone tells a story, and Donald brings that story to life with master craftsmanship and fair prices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Differentiator Cards -->
+      <div class="diff-grid stagger-children">
+        <div class="diff-card animate-on-scroll scale-in" id="diff-nc-stones">
+          <div class="diff-icon" id="diff-icon-1"></div>
+          <h3 data-i18n="about.diff1.title">NC Native Stones</h3>
+          <p data-i18n="about.diff1.desc">Sourced directly from North Carolina's legendary gem-bearing regions — Cowee Valley, Hiddenite, Spruce Pine, and Franklin.</p>
+        </div>
+        <div class="diff-card animate-on-scroll scale-in" id="diff-craftsmanship">
+          <div class="diff-icon" id="diff-icon-2"></div>
+          <h3 data-i18n="about.diff2.title">Master Craftsmanship</h3>
+          <p data-i18n="about.diff2.desc">Over a decade of precision stone cutting, faceting, and polishing. Every stone is finished to the highest standard.</p>
+        </div>
+        <div class="diff-card animate-on-scroll scale-in" id="diff-fair-prices">
+          <div class="diff-icon" id="diff-icon-3"></div>
+          <h3 data-i18n="about.diff3.title">Fair Prices</h3>
+          <p data-i18n="about.diff3.desc">Direct from the cutter means no middleman markup. Premium quality stones at prices that respect your budget.</p>
+        </div>
+        <div class="diff-card animate-on-scroll scale-in" id="diff-custom-orders">
+          <div class="diff-icon" id="diff-icon-4"></div>
+          <h3 data-i18n="about.diff4.title">Custom Orders</h3>
+          <p data-i18n="about.diff4.desc">Bring your vision to life. Custom cuts, specific shapes, and bespoke jewelry — we make it happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SERVICES SECTION                               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="services.title">Our Services</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="services.subtitle">From rough stone to finished masterpiece — we do it all</p>
+
+      <div class="services-grid stagger-children">
+        <!-- Service 1: Custom Stone Cutting -->
+        <div class="service-card animate-on-scroll scale-in" id="service-custom-cutting">
+          <div class="service-icon-wrap" id="service-icon-1"></div>
+          <h3 data-i18n="services.1.name">Custom Stone Cutting</h3>
+          <p data-i18n="services.1.desc">Precision cabochon and faceted cuts tailored to your specifications. Bring your rough stone or choose from our inventory.</p>
+          <span class="service-price" data-i18n="services.1.price">$15–$300+</span>
+        </div>
+
+        <!-- Service 2: Finished Stone Sales -->
+        <div class="service-card animate-on-scroll scale-in" id="service-finished-sales">
+          <div class="service-icon-wrap" id="service-icon-2"></div>
+          <h3 data-i18n="services.2.name">Finished Stone Sales</h3>
+          <p data-i18n="services.2.desc">Ready-to-set cabochons, faceted gems, and collector specimens. Each stone hand-selected and polished to perfection.</p>
+          <span class="service-price" data-i18n="services.2.price">$8–$500+</span>
+        </div>
+
+        <!-- Service 3: Wire-Wrapped Jewelry -->
+        <div class="service-card animate-on-scroll scale-in" id="service-jewelry">
+          <div class="service-icon-wrap" id="service-icon-3"></div>
+          <h3 data-i18n="services.3.name">Wire-Wrapped Jewelry</h3>
+          <p data-i18n="services.3.desc">Handcrafted wire-wrapped pendants, rings, and earrings featuring NC native stones. Each piece is one-of-a-kind.</p>
+          <span class="service-price" data-i18n="services.3.price">$40–$150</span>
+        </div>
+
+        <!-- Service 4: Rough Stone Sales -->
+        <div class="service-card animate-on-scroll scale-in" id="service-rough-sales">
+          <div class="service-icon-wrap" id="service-icon-4"></div>
+          <h3 data-i18n="services.4.name">Rough Stone Sales</h3>
+          <p data-i18n="services.4.desc">Premium rough material for fellow cutters and collectors. NC rubies, sapphires, emeralds, quartz, and more.</p>
+          <span class="service-price" data-i18n="services.4.price">$5–$500+</span>
+        </div>
+
+        <!-- Service 5: Workshops & Classes -->
+        <div class="service-card animate-on-scroll scale-in" id="service-workshops">
+          <div class="service-icon-wrap" id="service-icon-5"></div>
+          <h3 data-i18n="services.5.name">Workshops &amp; Classes</h3>
+          <p data-i18n="services.5.desc">Learn the art of lapidary from a master cutter. Beginner to advanced classes in cabochon cutting, faceting, and wire wrapping.</p>
+          <span class="service-price" data-i18n="services.5.price">$25–$175</span>
+        </div>
+
+        <!-- Service 6: Wholesale Supply -->
+        <div class="service-card animate-on-scroll scale-in" id="service-wholesale">
+          <div class="service-icon-wrap" id="service-icon-6"></div>
+          <h3 data-i18n="services.6.name">Wholesale Supply</h3>
+          <p data-i18n="services.6.desc">Volume pricing for jewelry makers, retailers, and rock shops. Consistent quality, reliable supply.</p>
+          <span class="service-price" data-i18n="services.6.price">Volume pricing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- STONE SHOP SECTION                             -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="shop" class="section shop-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="shop.title">Stone Shop</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="shop.subtitle">Browse our collection of hand-cut NC gemstones</p>
+
+      <!-- Filter Bar -->
+      <div class="shop-filter-bar animate-on-scroll fade-in" id="shop-filter-bar" role="tablist" aria-label="Filter stones by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="shop.filter.all">All Stones</button>
+        <button class="filter-btn" data-filter="cabochon" role="tab" aria-selected="false" data-i18n="shop.filter.cabochon">Cabochons</button>
+        <button class="filter-btn" data-filter="faceted" role="tab" aria-selected="false" data-i18n="shop.filter.faceted">Faceted</button>
+        <button class="filter-btn" data-filter="rough" role="tab" aria-selected="false" data-i18n="shop.filter.rough">Rough</button>
+        <button class="filter-btn" data-filter="tumbled" role="tab" aria-selected="false" data-i18n="shop.filter.tumbled">Tumbled</button>
+      </div>
+
+      <!-- Product Grid (rendered by JS) -->
+      <div id="shop-grid" class="shop-grid" role="tabpanel" aria-label="Stone products"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- MERCH STORE SECTION                            -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="merch" class="section merch-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="merch.title">SLA Merch Store</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="merch.subtitle">Rock your lapidary pride — gear for gem lovers and stone cutters</p>
+
+      <div id="merch-grid" class="merch-grid stagger-children">
+        <!-- Merch Item 1: Classic Tee -->
+        <div class="merch-card animate-on-scroll scale-in" id="merch-tee">
+          <div class="merch-image-wrap">
+            <img src="assets/images/merch/sla-tee-design.png" alt="SLA Classic Tee" class="merch-image" loading="lazy">
+          </div>
+          <div class="merch-info">
+            <h3>SLA Classic Tee</h3>
+            <p class="merch-price">$35.00</p>
+            <button class="btn btn-merch" data-merch-id="PF-TEE-001" data-i18n="merch.buyNow">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Merch Item 2: Hoodie -->
+        <div class="merch-card animate-on-scroll scale-in" id="merch-hoodie">
+          <div class="merch-image-wrap merch-placeholder">
+            <span id="merch-hoodie-icon"></span>
+            <span class="merch-placeholder-label">Lapidary Hoodie</span>
+          </div>
+          <div class="merch-info">
+            <h3>Lapidary Hoodie</h3>
+            <p class="merch-price">$55.00</p>
+            <button class="btn btn-merch" data-merch-id="PF-HOOD-001" data-i18n="merch.buyNow">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Merch Item 3: Mug -->
+        <div class="merch-card animate-on-scroll scale-in" id="merch-mug">
+          <div class="merch-image-wrap">
+            <img src="assets/images/merch/sla-mug-design.png" alt="Gem Cutter Mug" class="merch-image" loading="lazy">
+          </div>
+          <div class="merch-info">
+            <h3>Gem Cutter Mug</h3>
+            <p class="merch-price">$22.00</p>
+            <button class="btn btn-merch" data-merch-id="PF-MUG-001" data-i18n="merch.buyNow">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Merch Item 4: Dad Hat -->
+        <div class="merch-card animate-on-scroll scale-in" id="merch-hat">
+          <div class="merch-image-wrap merch-placeholder">
+            <span id="merch-hat-icon"></span>
+            <span class="merch-placeholder-label">SLA Dad Hat</span>
+          </div>
+          <div class="merch-info">
+            <h3>SLA Dad Hat</h3>
+            <p class="merch-price">$28.00</p>
+            <button class="btn btn-merch" data-merch-id="PF-HAT-001" data-i18n="merch.buyNow">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Merch Item 5: Tote -->
+        <div class="merch-card animate-on-scroll scale-in" id="merch-tote">
+          <div class="merch-image-wrap merch-placeholder">
+            <span id="merch-tote-icon"></span>
+            <span class="merch-placeholder-label">Rock Show Tote</span>
+          </div>
+          <div class="merch-info">
+            <h3>Rock Show Tote</h3>
+            <p class="merch-price">$25.00</p>
+            <button class="btn btn-merch" data-merch-id="PF-TOTE-001" data-i18n="merch.buyNow">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- NC GEMSTONES SECTION                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="nc-gems" class="section nc-gems-section">
+    <div class="nc-gems-bg" aria-hidden="true">
+      <img src="assets/images/nc-mountains.png" alt="" class="parallax-bg" loading="lazy">
+      <div class="nc-gems-overlay"></div>
+    </div>
+    <div class="container nc-gems-content">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="gems.title">North Carolina Gemstones</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="gems.subtitle">Our state is rich in world-class gemstone deposits</p>
+
+      <div class="gems-grid stagger-children">
+        <div class="gem-card animate-on-scroll scale-in" id="gem-ruby" style="--gem-accent: #9b2335;">
+          <div class="gem-icon-wrap" id="gem-icon-ruby"></div>
+          <h3 data-i18n="gems.ruby.name">Ruby</h3>
+          <p data-i18n="gems.ruby.desc">Cowee Valley rubies are world-renowned. From deep pigeon blood to pink, NC rubies rival those found anywhere on Earth.</p>
+        </div>
+        <div class="gem-card animate-on-scroll scale-in" id="gem-sapphire" style="--gem-accent: #1e3a5f;">
+          <div class="gem-icon-wrap" id="gem-icon-sapphire"></div>
+          <h3 data-i18n="gems.sapphire.name">Sapphire</h3>
+          <p data-i18n="gems.sapphire.desc">Franklin and Cowee Valley produce stunning blue, pink, and star sapphires prized by collectors worldwide.</p>
+        </div>
+        <div class="gem-card animate-on-scroll scale-in" id="gem-emerald" style="--gem-accent: #2d6a4f;">
+          <div class="gem-icon-wrap" id="gem-icon-emerald"></div>
+          <h3 data-i18n="gems.emerald.name">Emerald</h3>
+          <p data-i18n="gems.emerald.desc">Hiddenite, NC is one of the only places in North America where gem-quality emeralds are found naturally.</p>
+        </div>
+        <div class="gem-card animate-on-scroll scale-in" id="gem-garnet" style="--gem-accent: #8b1a1a;">
+          <div class="gem-icon-wrap" id="gem-icon-garnet"></div>
+          <h3 data-i18n="gems.garnet.name">Garnet</h3>
+          <p data-i18n="gems.garnet.desc">Rich rhodolite and almandine garnets are abundant in the NC mountains, offering deep reds and purples.</p>
+        </div>
+        <div class="gem-card animate-on-scroll scale-in" id="gem-aquamarine" style="--gem-accent: #5fa8d3;">
+          <div class="gem-icon-wrap" id="gem-icon-aquamarine"></div>
+          <h3 data-i18n="gems.aquamarine.name">Aquamarine</h3>
+          <p data-i18n="gems.aquamarine.desc">Spruce Pine and the Blue Ridge produce exceptional aquamarine crystals with vivid sea-blue color.</p>
+        </div>
+        <div class="gem-card animate-on-scroll scale-in" id="gem-smoky-quartz" style="--gem-accent: #5c4033;">
+          <div class="gem-icon-wrap" id="gem-icon-smoky-quartz"></div>
+          <h3 data-i18n="gems.smokyQuartz.name">Smoky Quartz</h3>
+          <p data-i18n="gems.smokyQuartz.desc">Abundant throughout the NC Appalachians, smoky quartz ranges from light tea to deep chocolate brown.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- WORKSHOPS SECTION                              -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="workshops" class="section workshops-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="workshops.title">Workshops &amp; Classes</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="workshops.subtitle">Learn the ancient art of lapidary from a master stone cutter</p>
+
+      <div class="workshops-grid stagger-children">
+        <!-- Workshop 1 -->
+        <div class="workshop-card animate-on-scroll scale-in" id="workshop-cabochon">
+          <div class="workshop-icon-wrap" id="workshop-icon-1"></div>
+          <h3 data-i18n="workshops.1.name">Intro to Cabochon Cutting</h3>
+          <p data-i18n="workshops.1.desc">Learn the fundamentals of cabochon cutting. You'll select a rough stone, shape it on the grinding wheel, and polish your first cabochon to take home.</p>
+          <div class="workshop-meta">
+            <span class="workshop-duration">
+              <span class="workshop-duration-icon" id="workshop-clock-1"></span>
+              <span data-i18n="workshops.1.duration">2 hours</span>
+            </span>
+            <span class="workshop-price" data-i18n="workshops.1.price">$25</span>
+          </div>
+        </div>
+
+        <!-- Workshop 2 -->
+        <div class="workshop-card animate-on-scroll scale-in" id="workshop-faceting">
+          <div class="workshop-icon-wrap" id="workshop-icon-2"></div>
+          <h3 data-i18n="workshops.2.name">Faceting Fundamentals</h3>
+          <p data-i18n="workshops.2.desc">Dive into the precision world of gem faceting. Learn to use a faceting machine, cut angles, and create brilliant fire in your stones.</p>
+          <div class="workshop-meta">
+            <span class="workshop-duration">
+              <span class="workshop-duration-icon" id="workshop-clock-2"></span>
+              <span data-i18n="workshops.2.duration">4 hours</span>
+            </span>
+            <span class="workshop-price" data-i18n="workshops.2.price">$75</span>
+          </div>
+        </div>
+
+        <!-- Workshop 3 -->
+        <div class="workshop-card animate-on-scroll scale-in" id="workshop-wirewrap">
+          <div class="workshop-icon-wrap" id="workshop-icon-3"></div>
+          <h3 data-i18n="workshops.3.name">Wire Wrapping Workshop</h3>
+          <p data-i18n="workshops.3.desc">Create beautiful wire-wrapped pendants using sterling silver wire and natural stones. All materials included — leave with a finished piece.</p>
+          <div class="workshop-meta">
+            <span class="workshop-duration">
+              <span class="workshop-duration-icon" id="workshop-clock-3"></span>
+              <span data-i18n="workshops.3.duration">3 hours</span>
+            </span>
+            <span class="workshop-price" data-i18n="workshops.3.price">$45</span>
+          </div>
+        </div>
+
+        <!-- Workshop 4 -->
+        <div class="workshop-card animate-on-scroll scale-in" id="workshop-advanced">
+          <div class="workshop-icon-wrap" id="workshop-icon-4"></div>
+          <h3 data-i18n="workshops.4.name">Advanced Stone Cutting</h3>
+          <p data-i18n="workshops.4.desc">Full-day intensive for experienced cutters. Master complex shapes, fantasy cuts, and advanced polishing techniques.</p>
+          <div class="workshop-meta">
+            <span class="workshop-duration">
+              <span class="workshop-duration-icon" id="workshop-clock-4"></span>
+              <span data-i18n="workshops.4.duration">Full day</span>
+            </span>
+            <span class="workshop-price" data-i18n="workshops.4.price">$175</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="workshops-cta animate-on-scroll slide-up">
+        <a href="#contact" class="btn btn-primary btn-lg" data-i18n="workshops.cta">Book a Workshop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- GEM SHOW CALENDAR SECTION                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="gem-shows" class="section gem-shows-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="shows.title">Upcoming Gem Shows</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="shows.subtitle">Visit us at these Southeast gem &amp; mineral shows</p>
+
+      <div id="gem-shows-grid" class="gem-shows-grid stagger-children">
+        <!-- Show 1 -->
+        <div class="show-card animate-on-scroll scale-in">
+          <div class="show-date-badge">
+            <span class="show-month">JUL</span>
+            <span class="show-days">23–26</span>
+          </div>
+          <div class="show-info">
+            <h3>Franklin Gem Show</h3>
+            <p class="show-venue">Macon County Community Building</p>
+            <p class="show-location">
+              <span class="show-location-icon" id="show-loc-1"></span>
+              Franklin, NC
+            </p>
+            <span class="show-sla-badge">
+              <span class="sla-dot"></span>
+              <span data-i18n="shows.slaAttending">SLA Attending</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Show 2 -->
+        <div class="show-card animate-on-scroll scale-in">
+          <div class="show-date-badge">
+            <span class="show-month">JUL</span>
+            <span class="show-days">24–26</span>
+          </div>
+          <div class="show-info">
+            <h3>Macon County Gemboree</h3>
+            <p class="show-venue">Carpenter Building</p>
+            <p class="show-location">
+              <span class="show-location-icon" id="show-loc-2"></span>
+              Franklin, NC
+            </p>
+            <span class="show-sla-badge">
+              <span class="sla-dot"></span>
+              <span data-i18n="shows.slaAttending">SLA Attending</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Show 3 -->
+        <div class="show-card animate-on-scroll scale-in">
+          <div class="show-date-badge">
+            <span class="show-month">JUL–AUG</span>
+            <span class="show-days">30–2</span>
+          </div>
+          <div class="show-info">
+            <h3>NC Mineral &amp; Gem Festival</h3>
+            <p class="show-venue">Spruce Pine Town Center</p>
+            <p class="show-location">
+              <span class="show-location-icon" id="show-loc-3"></span>
+              Spruce Pine, NC
+            </p>
+            <span class="show-sla-badge">
+              <span class="sla-dot"></span>
+              <span data-i18n="shows.slaAttending">SLA Attending</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Show 4 -->
+        <div class="show-card animate-on-scroll scale-in">
+          <div class="show-date-badge">
+            <span class="show-month">AUG</span>
+            <span class="show-days">21–23</span>
+          </div>
+          <div class="show-info">
+            <h3>Treasures of the Earth</h3>
+            <p class="show-venue">Dulles Expo Center</p>
+            <p class="show-location">
+              <span class="show-location-icon" id="show-loc-4"></span>
+              Dulles, VA
+            </p>
+            <span class="show-sla-badge">
+              <span class="sla-dot"></span>
+              <span data-i18n="shows.slaAttending">SLA Attending</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Show 5 -->
+        <div class="show-card animate-on-scroll scale-in">
+          <div class="show-date-badge">
+            <span class="show-month">SEP</span>
+            <span class="show-days">11–13</span>
+          </div>
+          <div class="show-info">
+            <h3>Forsyth Gem Show</h3>
+            <p class="show-venue">Forsyth County Fairgrounds</p>
+            <p class="show-location">
+              <span class="show-location-icon" id="show-loc-5"></span>
+              Winston-Salem, NC
+            </p>
+            <span class="show-sla-badge">
+              <span class="sla-dot"></span>
+              <span data-i18n="shows.slaAttending">SLA Attending</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- PROCESS TIMELINE SECTION                       -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="process" class="section process-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll slide-up" data-i18n="process.title">Our Process</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-i18n="process.subtitle">From raw stone to finished gem — five steps of transformation</p>
+
+      <div class="process-timeline animate-on-scroll fade-in">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div class="process-step" id="process-step-1">
+          <div class="step-circle" id="step-icon-1"></div>
+          <h3 data-i18n="process.1">Source</h3>
+          <p data-i18n="process.1.desc">Sourced from NC mines and trusted global suppliers</p>
+        </div>
+
+        <div class="process-step" id="process-step-2">
+          <div class="step-circle" id="step-icon-2"></div>
+          <h3 data-i18n="process.2">Slab</h3>
+          <p data-i18n="process.2.desc">Cut into workable slabs with diamond saws</p>
+        </div>
+
+        <div class="process-step" id="process-step-3">
+          <div class="step-circle" id="step-icon-3"></div>
+          <h3 data-i18n="process.3">Shape</h3>
+          <p data-i18n="process.3.desc">Precision shaping on grinding wheels</p>
+        </div>
+
+        <div class="process-step" id="process-step-4">
+          <div class="step-circle" id="step-icon-4"></div>
+          <h3 data-i18n="process.4">Polish</h3>
+          <p data-i18n="process.4.desc">Mirror-finish polish reveals the stone's beauty</p>
+        </div>
+
+        <div class="process-step" id="process-step-5">
+          <div class="step-circle" id="step-icon-5"></div>
+          <h3 data-i18n="process.5">Create</h3>
+          <p data-i18n="process.5.desc">Set into jewelry or presented as a collector gem</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- NEWSLETTER SECTION                             -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="newsletter" class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-card animate-on-scroll scale-in">
+        <div class="newsletter-icon" id="newsletter-gem-icon"></div>
+        <h2 data-i18n="newsletter.title">Get New Stone Alerts</h2>
+        <p data-i18n="newsletter.subtitle">Be the first to know when new stones arrive, upcoming shows, and exclusive deals</p>
+        <form id="newsletter-form" class="newsletter-form" aria-label="Newsletter signup">
+          <div class="newsletter-input-wrap">
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              class="newsletter-input"
+              placeholder="Enter your email"
+              data-i18n-placeholder="newsletter.placeholder"
+              required
+              autocomplete="email"
+            >
+            <button type="submit" class="btn btn-primary newsletter-btn" id="newsletter-submit" data-i18n="newsletter.subscribe">Subscribe</button>
+          </div>
+          <p id="newsletter-success" class="newsletter-success" aria-live="polite" data-i18n="newsletter.success">Thanks for subscribing!</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CONTACT / FOOTER                               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand & Info -->
+        <div class="footer-col footer-brand">
+          <img src="assets/images/sla-logo.png" alt="SLA Logo" class="footer-logo" width="50" height="50" loading="lazy">
+          <h3>Southeastern Lapidary Associates</h3>
+          <p class="footer-tagline" data-i18n="footer.tagline">Proudly serving the Piedmont Triad and beyond</p>
+          <p class="footer-dba" data-i18n="footer.dba">DBA: Southeastern Lapidary Associates</p>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div class="footer-col footer-contact-info">
+          <h3 data-i18n="contact.title">Get In Touch</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon" id="contact-phone-icon"></span>
+              <span data-i18n="contact.phone">(336) 555-ROCK</span>
+            </li>
+            <li>
+              <a href="mailto:info@southeasternlapidary.com" class="contact-link">
+                <span class="contact-icon" id="contact-email-icon"></span>
+                <span data-i18n="contact.email">info@southeasternlapidary.com</span>
+              </a>
+            </li>
+            <li>
+              <span class="contact-icon" id="contact-location-icon"></span>
+              <span data-i18n="contact.address">Greensboro, NC</span>
+            </li>
+            <li>
+              <span class="contact-icon" id="contact-clock-icon"></span>
+              <span data-i18n="contact.hours">Mon–Sat: 10am–6pm</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Social -->
+        <div class="footer-col footer-social-col">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram" id="social-instagram">
+              <span id="social-ig-icon"></span>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook" id="social-facebook">
+              <span id="social-fb-icon"></span>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
+              <span id="social-yt-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2025 Southeastern Lapidary Associates. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CART SLIDE-OUT PANEL                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+  <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h3 data-i18n="shop.cart.title">Your Cart</h3>
+      <button id="cart-close" class="cart-close-btn" aria-label="Close cart">
+        <span id="cart-close-icon"></span>
+      </button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <p class="cart-empty-message" data-i18n="shop.cart.empty">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span data-i18n="shop.cart.subtotal">Subtotal</span>
+        <span id="cart-subtotal-amount" class="cart-subtotal-amount">$0.00</span>
+      </div>
+      <button id="cart-checkout-btn" class="btn btn-primary btn-block" data-i18n="shop.cart.checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CHECKOUT MODAL                                 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="checkout-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close-btn" aria-label="Close modal">
+        <span id="modal-close-icon"></span>
+      </button>
+      <div class="modal-icon" id="modal-gem-icon"></div>
+      <h3 id="modal-title" data-i18n="modal.checkout.title">Checkout Coming Soon!</h3>
+      <p data-i18n="modal.checkout.message">Stripe checkout is being set up. Contact us to purchase:</p>
+      <a href="mailto:info@southeasternlapidary.com" class="modal-email" data-i18n="modal.checkout.email">info@southeasternlapidary.com</a>
+      <button class="btn btn-primary modal-close-action" data-i18n="modal.close" id="modal-close-action">Close</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SCRIPTS                                        -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- Data -->
+  <script src="data/products.js"></script>
+  <script src="data/merch-products.js"></script>
+  <script src="data/gem-shows.js"></script>
+
+  <!-- Core Modules -->
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
